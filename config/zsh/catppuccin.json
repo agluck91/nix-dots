@@ -1,0 +1,136 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "os": "#ACB0BE",
+    "closer": "p:os",
+    "pink": "#F5C2E7",
+    "muave": "#CBA6F7",
+    "blue": "#89B4FA",
+    "weight": "#FFFFFF",
+    "text": "#CDD6F4",
+    "peach": "#FAB387",
+    "yellow": "#F9E2AF",
+    "flamingo": "#F2CDCD",
+    "rosewater": "#F5E0DC",
+    "sky": "#89DCEB",
+    "sapphire": "#74C7EC",
+    "teal": "#94E2D5",
+    "maroon": "#EBA0AC",
+    "lavender": "#B4BEFE",
+    "crust": "#11111B",
+    "overlay": "#9399B2",
+    "subtext": "#CDD6F4",
+    "base": "#1E1E2E",
+    "mantle": "#181825",
+    "green": "#A6E3A1",
+    "red": "#F38BA8",
+    "surface0": "#313244"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "template": "\n"
+        },
+        {
+          "type": "os",
+          "style": "diamond",
+          "background": "p:blue",
+          "foreground": "p:crust",
+          "powerline_symbol": "\ue0b4",
+          "leading_diamond": "\ue0b6",
+          "template": "<b>{{.Icon}}</b> "
+        },
+        {
+          "type": "session",
+          "style": "diamond",
+          "background": "p:blue",
+          "foreground": "p:crust",
+          "powerline_symbol": "\ue0b4",
+          "template": "<b>{{ .UserName }}@{{ .HostName }}</b>"
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "foreground": "p:crust",
+          "background": "p:pink",
+          "powerline_symbol": "\ue0b4",
+          "properties": {
+            "home_icon": "~",
+            "style": "agnoster_full"
+          },
+          "template": " <b>{{ .Path }}</b> "
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "foreground": "p:crust",
+          "background": "p:muave",
+          "powerline_symbol": "\ue0b4",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "cherry_pick_icon": "\ue29b ",
+            "commit_icon": "\uf417 ",
+            "fetch_status": true,
+            "fetch_upstream_icon": false,
+            "merge_icon": "\ue727 ",
+            "no_commits_icon": "\uf0c3 ",
+            "rebase_icon": "\ue728 ",
+            "revert_icon": "\uf0e2 ",
+            "tag_icon": "\uf412 "
+          },
+          "templates": [
+            " <b>{{ .HEAD }}</b>",
+            "<b>{{if .BranchStatus}}  {{ .BranchStatus }}{{ end }}</b>",
+            "<b>{{if .Working.Changed}}  {{ .Working.String }}{{ end }}</b>"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "rprompt",
+      "overflow": "hide",
+      "segments": [
+        {
+          "type": "executiontime",
+          "style": "plain",
+          "foreground": "p:rosewater",
+          "template": " {{ .FormattedMs }} ",
+          "properties": {
+            "threshold": 200,
+            "style": "austin",
+            "always_enabled": true
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "template": "❯",
+          "background": "transparent",
+          "foreground_templates": [
+            "{{if gt .Code 0}}p:red{{end}}",
+            "{{if eq .Code 0}}p:blue{{end}}"
+          ]
+        }
+      ]
+    }
+  ],
+  "secondary_prompt": {
+    "foreground": "p:muave",
+    "background": "transparent",
+    "template": "❯❯ "
+  },
+  "final_space": true,
+  "version": 2
+}

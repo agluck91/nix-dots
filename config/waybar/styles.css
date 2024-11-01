@@ -1,0 +1,147 @@
+/* @import "catppuccin.css"; */
+
+* {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  border-radius: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+window#waybar {
+  background-color: transparent;
+}
+
+tooltip {
+  border-radius: 6px;
+  background-color: @mantle;
+  padding: 4px 18px;
+  border: 2px solid @overlay1;
+  margin: 0px;
+  color: @text;
+}
+
+#custom-music,
+#tray,
+#backlight,
+#clock,
+#battery,
+#bluetooth,
+#pulseaudio,
+#custom-lock,
+#gamemode,
+#network,
+#gamemode,
+#stats,
+#window,
+#quick-links,
+#screenshot,
+#custom-apps,
+/* #custom-powermenu, */
+#custom-power {
+  border-radius: 1.2em;
+  transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease;
+  background-color: @base;
+  padding: 3px 10px;
+  color: @text;
+  border: 2px solid @surface2;
+}
+
+#custom-powermenu {
+  border-radius: 1.2em;
+  transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease;
+  background-color: @base;
+  padding: 3px 13px 3px 7px;
+  color: @text;
+  border: 2px solid @surface2;
+}
+
+#custom-nautilus,
+#custom-settings,
+#custom-spotify,
+#custom-discord,
+#custom-chrome {
+  transition: background-color 300ms ease, color 300ms ease;
+  color: @text;
+  margin-right: 16px;
+}
+
+#cpu,
+#temperature {
+  margin-right: 12px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding-right: 10px;
+  border-right: 2px solid @surface1;
+}
+
+
+#custom-ssmonitor {
+  padding-right: 16px;
+  padding-left: 2px;
+}
+
+#custom-sswindow {
+  padding-right: 14px;
+  padding-left: 10px;
+  border-left: 2px solid @surface1;
+  border-right: 2px solid @surface1;
+}
+
+#custom-ssregion {
+  padding-right: 4px;
+  padding-left: 12px;
+}
+
+
+#custom-apps:hover,
+#custom-powermenu:hover,
+#workspaces:hover,
+#clock:hover,
+#network:hover,
+#pulseaudio:hover,
+#screenshot:hover,
+#tray:hover,
+#quick-links:hover {
+  background-color: @crust;
+  border: 2px solid @crust;
+}
+
+#workspaces {
+  border-radius: 1.2em;
+  transition: background-color 300ms ease, color 300ms ease;
+  background-color: @base;
+  padding: 3px;
+  border: 2px solid @surface1;
+}
+
+#workspaces button {
+  border-radius: 1.2em;
+  transition: background-color 300ms ease, color 300ms ease;
+  padding: 0;
+  margin: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+  color: @blue;
+}
+
+
+#workspaces button:hover {
+  color: @text;
+  background-color: @surface0;
+}
+
+
+#workspaces button.active {
+  color: @mantle;
+  background-color: @blue;
+}
+
+
+#tray menu {
+  border-radius: 1em;
+  padding: 6px;
+  border: 2px solid @surface2;
+}
