@@ -19,8 +19,6 @@
     enableZshIntegration = true;
   };
 
-  users.defaultUserShell = pkgs.zsh;
-
   programs.zsh = {
     enable = true;
     dotDir = ".config/zsh";
