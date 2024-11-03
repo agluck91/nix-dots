@@ -8,7 +8,7 @@
 
     # terminal
     ripgrep
-    batcat
+    bat
     eza
     yazi
     btop

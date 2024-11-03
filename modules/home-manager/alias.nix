@@ -6,7 +6,7 @@
   lla = "exa --icons -gh --group-directories-first -la";
   llt = "exa --icons --group-directories-first -T";
   cc  =  "/bin/cat";
-  cat = "batcat -p -P";
+  cat = "bat -p -P";
   rm = "rm -i";
   cp = "cp -i";
   mv = "mv -i";
