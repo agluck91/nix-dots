@@ -32,7 +32,7 @@
       ignoreDups = true;
       ignoreSpace = true;
       share = true;
-      size = 5000;
+      size = 10000;
     };
 
     shellAliases = import ./alias.nix;
