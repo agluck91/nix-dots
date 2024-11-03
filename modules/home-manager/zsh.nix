@@ -29,7 +29,7 @@
       size = 5000;
     };
 
-    shellAliases = import ./aliases.nix;
+    shellAliases = import ./alias.nix;
 
     plugins = [
       {
