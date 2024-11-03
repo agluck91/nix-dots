@@ -63,13 +63,6 @@
         zstyle ':completion:*' menu no
         zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
         zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-
-
-        # Adds volta to the path
-        # PATH="$VOLTA_HOME/bin:$PATH"
-
-        # Source secrets
-        source ~/.config/zsh/secrets.zsh
       '';
   };
 }
