@@ -18,12 +18,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Neovim config flake
-    neovim-config = {
-      url = "github:agluck91/nvim-config-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # alejandra nix formatter
     alejandra = {
       url = "github:kamadorueda/alejandra/3.0.0";
