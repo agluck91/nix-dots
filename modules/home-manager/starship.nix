@@ -2,18 +2,18 @@
   palette = "catppuccin_macchiato";
 
   format = ''
-    $os \\
-    $directory\\
-    $git_branch\\
-    $git_status\\
-    $line_break\\
-    > $deno\\
-    $nodejs\\
-    $pulumi\\
-    $rust\\
-    $golang\\
-    $time\\
-    $line_break\\
+    $os 
+    $directory
+    $git_branch
+    $git_status
+    $line_break
+    > $deno
+    $nodejs
+    $pulumi
+    $rust
+    $golang
+    $time
+    $line_break
     $character
   '';
 
