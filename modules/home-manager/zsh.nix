@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   programs.starship = {
     enable = true;
+    settings = import starship.nix;
     enableZshIntegration = true;
   };
 
