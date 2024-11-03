@@ -51,7 +51,7 @@
     ...
   } @ inputs: {
     # The host with the hostname `nixos-desktop` will use this configuration
-    nixosConfigurations.nixos-desktop = nixpkgs.lib.nixosSystem rec {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
 
       specialArgs = {

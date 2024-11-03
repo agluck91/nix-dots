@@ -3,6 +3,7 @@
     slack
     vesktop
     google-chrome
+    warp-terminal
     kooha
 
     # terminal
