@@ -1,4 +1,9 @@
 {pkgs, ...}: {
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   # Link custom catppuccin theme for Oh-My-Posh
   xdg.configFile."zsh/catppuccin.json".source = ../../config/zsh/catppuccin.json;
 
