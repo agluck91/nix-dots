@@ -13,10 +13,7 @@
     ../../modules/home-manager/volta.nix
     ../../modules/home-manager/spotify.nix
     ../../modules/home-manager/apps.nix
-    inputs.neovim-config.homeManagerModules.default
   ];
-
-  stylix.targets.neovim.enable = lib.mkForce false;
 
   home.username = "agluck";
   home.homeDirectory = "/home/agluck";
