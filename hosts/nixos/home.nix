@@ -19,11 +19,6 @@
     username = "agluck";
     homeDirectory = "/home/agluck";
     stateVersion = "24.05";
-    file.".ssh/config" = {
-      source = ../../config/ssh/config;
-      target = ".ssh/config";
-      onChange = "systemctl --user restart sshd";
-    };
   };
 
   programs.home-manager.enable = true;
