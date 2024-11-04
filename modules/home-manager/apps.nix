@@ -8,7 +8,6 @@
     tailscale
     chatgpt-cli
     todoist
-    todoist-electron
     obsidian
     _1password-gui
     _1password-cli
