@@ -7,10 +7,25 @@
     kooha
     tailscale
     chatgpt-cli
+    todoist
+    todoist-electron
+    obsidian
+    _1password-gui
+    _1password
+    calibre
+    dbeaver-bin
+    obs-studio
+    upwork
+    xiphos
+    zoom-us
+    postman
+    remmina
+
 
     # terminal
     ripgrep
     bat
+    bottom
     eza
     btop
     lazygit
