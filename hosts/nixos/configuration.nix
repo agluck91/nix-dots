@@ -45,6 +45,7 @@
     };
     printing.enable = true;
     qemuGuest.enable = true;
+    spice-vdagentd.enable = true;
     openssh.enable = true;
   };
 
