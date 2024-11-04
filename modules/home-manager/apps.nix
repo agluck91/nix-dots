@@ -15,6 +15,7 @@
     xiphos
     postman
     remmina
+    popsicle
 
 
     # terminal
