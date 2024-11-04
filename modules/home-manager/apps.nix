@@ -22,7 +22,6 @@
 
     # fonts
     fira-code-nerdfont
-    hack-nerdfont
 
     # utils
     dconf2nix

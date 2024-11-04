@@ -61,6 +61,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.qemuGuest.enable = true;
 
   security.rtkit.enable = true;
 
