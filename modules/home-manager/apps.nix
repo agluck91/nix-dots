@@ -10,7 +10,6 @@
     ripgrep
     bat
     eza
-    yazi
     btop
     lazygit
     oh-my-posh
