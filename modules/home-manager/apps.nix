@@ -11,7 +11,7 @@
     todoist-electron
     obsidian
     _1password-gui
-    _1password
+    _1password-cli
     calibre
     dbeaver-bin
     obs-studio
