@@ -15,7 +15,6 @@
     calibre
     dbeaver-bin
     obs-studio
-    upwork
     xiphos
     zoom-us
     postman
