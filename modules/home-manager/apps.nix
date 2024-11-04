@@ -6,6 +6,7 @@
     warp-terminal
     kooha
     tailscale
+    chatgpt-cli
 
     # terminal
     ripgrep
