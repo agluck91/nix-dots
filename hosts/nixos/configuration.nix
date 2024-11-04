@@ -47,6 +47,7 @@
     qemuGuest.enable = true;
     spice-vdagentd.enable = true;
     openssh.enable = true;
+    tailscale.enable = true;
   };
 
   security.rtkit.enable = true;

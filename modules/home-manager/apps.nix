@@ -5,17 +5,14 @@
     google-chrome
     warp-terminal
     kooha
-    tailscale
     chatgpt-cli
     todoist
     obsidian
     _1password-gui
     _1password-cli
-    calibre
     dbeaver-bin
     obs-studio
     xiphos
-    zoom-us
     postman
     remmina
 
@@ -23,11 +20,11 @@
     # terminal
     ripgrep
     bat
+    gh
     bottom
     eza
     btop
     lazygit
-    oh-my-posh
     neofetch
     python3
     cmatrix
