@@ -53,10 +53,13 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  virtualisation.libvirtd.enable = true;
+
   programs = {
     dconf.enable = true;
     zsh.enable = true;
     firefox.enable = true;
+    virt-manager.enable = true;
   };
 
   users = {

@@ -5,6 +5,7 @@
     google-chrome
     warp-terminal
     kooha
+    tailscale
 
     # terminal
     ripgrep
