@@ -28,6 +28,7 @@
     flatpak.enable = true;
     xserver = {
       enable = true;
+      resolutions = lib.mkOverride 9 { x = 3440; y = 1440; };
       xkb = {
         layout = "us";
         variant = "";
