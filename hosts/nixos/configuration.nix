@@ -75,6 +75,7 @@
       wget
       git
       curl
+      spice-vdagent
       nil
       zip
       unzip
