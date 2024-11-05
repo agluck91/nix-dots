@@ -138,6 +138,10 @@
           config = lib.fileContents ../../config/nvim/plugins/render-markdown.lua;
         }
         {
+          plugin = img-clip;
+          config = lib.fileContents ../../config/nvim/plugins/img-clip.lua;
+        }
+        {
           plugin = cloak-nvim;
           config = lib.fileContents ../../config/nvim/plugins/cloak.lua;
         }
