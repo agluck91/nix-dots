@@ -36,7 +36,11 @@
     };
 
     shellAliases = import ./alias.nix;
-
+    
+    sessionPath = [
+      "$HOME/.config/volta"
+      "$HOME/.config/zsh/volta/bin"
+    ];
     plugins = [
       {
         name = "zsh-fzf-history-search";
