@@ -43,6 +43,10 @@
       url = "github:HakonHarnes/img-clip.nvim";
       flake = false;
     };
+    avante = {
+      url = "github:yetone/avante.nvim";
+      flake = false;
+    };
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";

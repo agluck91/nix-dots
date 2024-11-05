@@ -76,15 +76,17 @@
         name = "lsp-file-operations-nvim";
         src = inputs.lsp-file-operations-nvim;
       };
-
       render-markdown = pkgs.vimUtils.buildVimPlugin {
         name = "render-markdown";
         src = inputs.render-markdown;
       };
-
       img-clip = pkgs.vimUtils.buildVimPlugin {
         name = "img-clip";
         src = inputs.img-clip;
+      };
+      avante = pkgs.vimUtils.buildVimPlugin {
+        name = "avante";
+        src = inputs.avante;
       };
 
       plain = with pkgs.vimPlugins; [
@@ -140,6 +142,9 @@
         {
           plugin = img-clip;
           config = lib.fileContents ../../config/nvim/plugins/img-clip.lua;
+        }
+        {
+          plugin = 
         }
         {
           plugin = cloak-nvim;
