@@ -205,7 +205,7 @@
             p.tree-sitter-hcl
             p.tree-sitter-cmake
           ]);
-          config = lib.fileContents ./lua/plugins/treesitter.lua;
+          config = lib.fileContents ../../config/nvim/plugins/treesitter.lua;
         }
       ];
     in
