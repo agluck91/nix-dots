@@ -20,6 +20,10 @@
     username = "agluck";
     homeDirectory = "/home/agluck";
     stateVersion = "24.05";
+    sessionPath = [
+      "$HOME/.config/volta"
+      "$HOME/.config/zsh/volta/bin"
+    ];
   };
 
   programs.home-manager.enable = true;
