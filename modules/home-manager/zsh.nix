@@ -71,7 +71,7 @@
         zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
         #VOLTA 
-        export VOLTA_HOME="$HOME/.config/volta"
+        export VOLTA_HOME="$HOME/.volta"
         export PATH="$VOLTA_HOME/bin:$PATH"
       '';
   };
