@@ -156,10 +156,6 @@
           config = lib.fileContents ../../config/nvim/plugins/telescope.lua;
         }
         {
-          plugin = img-clip;
-          config = lib.fileContents ../../config/nvim/plugins/img-clip.lua;
-        }
-        {
           plugin = telescope-nvim;
           config = lib.fileContents ../../config/nvim/plugins/telescope.lua;
         }
