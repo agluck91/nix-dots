@@ -3,23 +3,38 @@
     slack
     vesktop
     google-chrome
-    warp-terminal
     kooha
     chatgpt-cli
     todoist
     obsidian
     _1password-gui
     _1password-cli
-    dbeaver-bin
     obs-studio
     xiphos
-    postman
     remmina
     popsicle
+
+    #dev
+    postgresql
+    rustup
+    docker
+    nvidia-docker
+    kubernetes-helm
+    kubectl
+    rancher
+    minikube
+    warp-terminal
+    postman
+    deno
+    go
+    dbeaver-bin
+    poetry
+    typescript
 
 
     # terminal
     ripgrep
+    mosh
     bat
     gh
     bottom
@@ -38,8 +53,5 @@
     # utils
     dconf2nix
     watchman
-
-    # dev
-    deno
   ];
 }

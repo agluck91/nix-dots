@@ -35,6 +35,14 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    render-markdown = {
+      url = "github:MeanderingProgrammer/render-markdown.nvim";
+      flake = false;
+    };
+    img-clip = {
+      url = "github:HakonHarnes/img-clip.nvim";
+      flake = false;
+    };
   };
 
   outputs = {
