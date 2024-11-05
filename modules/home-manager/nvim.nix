@@ -12,12 +12,6 @@
   xdg.configFile."nvim/lua/lsp-settings.lua".source = ../../config/nvim/lsp-settings.lua;
   xdg.configFile."nvim/lua/default.lua".source = ../../config/nvim/default.lua;
 
-  pkgs.overlays = [
-    (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-    }))
-  ];
-
   programs.neovim = {
     enable = true;
     defaultEditor = true;
