@@ -99,6 +99,7 @@
         nvim-notify
         nvim-surround
         todo-comments-nvim
+        vim-test
         
         # CMP
         cmp-path
@@ -122,10 +123,6 @@
       ];
       
       withConfig = with pkgs.vimPlugins; [
-        {
-          plugin = vim-test;
-          config = lib.fileContents ../../config/nvim/plugins/vim-test.lua;
-        }
         {
           plugin = copilot-lua;
           config = lib.fileContents ../../config/nvim/plugins/copilot.lua;
