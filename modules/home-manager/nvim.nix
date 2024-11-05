@@ -105,6 +105,7 @@
         cmp-path
         cmp-buffer
         cmp-nvim-lsp
+        nvim-cmp
         luasnip
         cmp_luasnip
         friendly-snippets

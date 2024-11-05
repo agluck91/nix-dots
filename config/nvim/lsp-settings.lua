@@ -28,8 +28,8 @@ local cmp_nvim_lsp = require "cmp_nvim_lsp"
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'vsnip' }, -- For vsnip users.
-      -- { name = 'luasnip' }, -- For luasnip users.
+      --{ name = 'vsnip' }, -- For vsnip users.
+      { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
     }, {
@@ -107,7 +107,7 @@ M.on_attach = function(__client, bufnr)
   lspmap("n", "<leader>vrn", vim.lsp.buf.rename, opts "Rename")
   lspmap("i", "<C-h>", vim.lsp.buf.signature_help, opts "Signature Help")
 end
-
+ 
 -- Used to enable autocompletion (assign to every lsp server config)
 M.capabilities =
   vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), cmp_nvim_lsp.default_capabilities())
