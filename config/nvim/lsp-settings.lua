@@ -35,7 +35,7 @@ M.on_attach = function(__client, bufnr)
   lspmap("n", "<leader>vd", vim.diagnostic.open_float, opts "Diagnostics")
   lspmap("n", "<leader>vca", vim.lsp.buf.code_action, opts "Code Actions")
   lspmap("n", "<leader>vr", vim.lsp.buf.references, opts "References")
-  lspmap("n", "<leader>vrn", vim.lsp.buf.rename, opts "Rename")
+  lspmap("n", "<leader>rn", vim.lsp.buf.rename, opts "Rename")
   lspmap("i", "<C-h>", vim.lsp.buf.signature_help, opts "Signature Help")
 end
  

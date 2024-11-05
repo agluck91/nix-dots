@@ -24,6 +24,8 @@
       # lua
       ''
         require "default";
+        require "lsp-settings";
+        require "lsp-servers";
       '';
 
     extraPackages = with pkgs; [
