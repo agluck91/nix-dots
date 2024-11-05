@@ -180,6 +180,10 @@
           config = lib.fileContents ../../config/nvim/plugins/indent-blankline.lua;
         }
         {
+          plugin = lsp-file-operations-nvim;
+          config = lib.fileContents ../../config/nvim/plugins/lspconfig.lua;
+        }
+        {
           plugin = nvim-treesitter.withPlugins (p: [
             p.tree-sitter-nix
             p.tree-sitter-vim
