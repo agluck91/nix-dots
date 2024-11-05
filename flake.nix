@@ -44,8 +44,7 @@
       flake = false;
     };
     avante = {
-      url = "github:yetone/avante.nvim";
-      branch = "main";
+      url = "github:yetone/avante.nvim/main";
       flake = false;
     };
     neovim-nightly-overlay = {
