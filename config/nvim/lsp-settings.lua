@@ -16,34 +16,27 @@ M.on_attach = function(__client, bufnr)
     return { buffer = bufnr, silent = true, desc = "LSP - " .. desc }
   end
 
-  local map = vim.keymap.set
+  local lspmap = vim.keymap.set
 
-  map("n", "<leader>lr", "<CMD>Telescope lsp_references<CR>", opts "References")
-  map("n", "gd", "<CMD>Telescope lsp_definitions<CR>", opts "Definition")
-  map("n", "<leader>li", "<CMD>Telescope lsp_implementations<CR>", opts "Implementation")
-  map("n", "<leader>lt", "<CMD>Telescope lsp_type_definitions<CR>", opts "Type definition")
+  lspmap("n", "<leader>lr", "<CMD>Telescope lsp_references<CR>", opts "References")
+  lspmap("n", "<leader>li", "<CMD>Telescope lsp_implementations<CR>", opts "Implementation")
+  lspmap("n", "<leader>lt", "<CMD>Telescope lsp_type_definitions<CR>", opts "Type definition")
 
-  -- map("n", "gD", vim.lsp.buf.declaration, opts "Go to declaration")
-  -- map("n", "gd", vim.lsp.buf.definition, opts "Go to definition")
+  lspmap("n", "gD", vim.lsp.buf.declaration, opts "Go to declaration")
+  lspmap("n", "gd", vim.lsp.buf.definition, opts "Go to definition")
 
-  map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts "Code Actions")
-
-  map("n", "<leader>rn", vim.lsp.buf.rename, opts "Smart Rename")
-
-  map("n", "<leader>d", "<CMD>Telescope diagnostics bufnr=0<CR>", opts "Show buffer diagnostics")
-  map("n", "<leader>D", "<CMD>Telescope diagnostics bufnr=nill<CR>", opts "Show buffer diagnostics (all buffers)")
-  -- map("n", "<leader>D", vim.diagnostic.open_float, opts "Show line diagnostics")
-  map("n", "[d", vim.diagnostic.goto_prev, opts "Go to previous diagnostic")
-  map("n", "]d", vim.diagnostic.goto_next, opts "Go to next diagnostic")
-
-  -- TODO: do I really need these?
-  map("n", "<leader>sh", vim.lsp.buf.signature_help, opts "Show signature help")
-
-  map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts "Add workspace folder")
-  map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts "Remove workspace folder")
-  map("n", "<leader>wl", function()
+  lspmap("n", "K", vim.lsp.buf.hover, opts "Hover")
+  lspmap("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts "Workspace Symbols")
+  lspmap("n", "<leader>vwa", vim.lsp.buf.add_workspace_folder, opts "Add workspace folder")
+  lspmap("n", "<leader>vwr", vim.lsp.buf.remove_workspace_folder, opts "Remove workspace folder")
+  lspmap("n", "<leader>vwl", function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, opts "List workspace folders")
+  lspmap("n", "<leader>vd", vim.diagnostic.open_float, opts "Diagnostics")
+  lspmap("n", "<leader>vca", vim.lsp.buf.code_action, opts "Code Actions")
+  lspmap("n", "<leader>vr", vim.lsp.buf.references, opts "References")
+  lspmap("n", "<leader>vrn", vim.lsp.buf.rename, opts "Rename")
+  lspmap("i", "<C-h>", vim.lsp.buf.signature_help, opts "Signature Help")
 end
 
 -- Used to enable autocompletion (assign to every lsp server config)

@@ -1,3 +1,3 @@
-  require("avante").setup({
-    provider = "copilot"
-  })
+require("avante").setup({
+  provider = "copilot"
+})
