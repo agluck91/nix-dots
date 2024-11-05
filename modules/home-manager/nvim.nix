@@ -1,7 +1,6 @@
-{
+inputs: {
   lib,
   pkgs,
-  inputs,
   ...
 }: {
   home.packages = [pkgs.lazygit];
