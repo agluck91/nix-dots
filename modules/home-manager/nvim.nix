@@ -103,6 +103,7 @@
         nvim-surround
         todo-comments-nvim
         vim-test
+        CopilotChat-nvim
         
         # CMP
         cmp-path
