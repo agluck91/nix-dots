@@ -69,6 +69,10 @@
         zstyle ':completion:*' menu no
         zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
         zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+        #VOLTA 
+        export VOLTA_HOME="$HOME/.config/volta"
+        export PATH="$VOLTA_HOME/bin:$PATH"
       '';
   };
 }
