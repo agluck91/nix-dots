@@ -84,10 +84,6 @@
         name = "img-clip";
         src = inputs.img-clip;
       };
-      avante = pkgs.vimUtils.buildVimPlugin {
-        name = "avante";
-        src = inputs.avante;
-      };
 
       plain = with pkgs.vimPlugins; [
         # Utils
