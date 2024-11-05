@@ -13,7 +13,7 @@
     ../../modules/home-manager/volta.nix
     ../../modules/home-manager/spotify.nix
     ../../modules/home-manager/apps.nix
-    ../../modules/home-manager/nvim.nix inputs
+    ../../modules/home-manager/nvim.nix
   ];
 
   home = {

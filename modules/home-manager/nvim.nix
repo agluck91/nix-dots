@@ -1,6 +1,7 @@
-inputs: {
+{
   lib,
   pkgs,
+  inputs,
   ...
 }: {
   home.packages = [pkgs.lazygit];
@@ -71,16 +72,16 @@ inputs: {
     plugins = let
       toLuaType = builtins.map (plugin: plugin // {type = "lua";});
 
-      render-markdown = pkgs.vimUtils.buildVimPlugin {
-        name = "render-markdown";
-        src = inputs.render-markdown;
-      };
-
-      img-clip = pkgs.vimUtils.buildVimPlugin {
-        name = "img-clip";
-        src = inputs.img-clip;
-      };
-
+      # render-markdown = pkgs.vimUtils.buildVimPlugin {
+      #   name = "render-markdown";
+      #   src = inputs.render-markdown;
+      # };
+      #
+      # img-clip = pkgs.vimUtils.buildVimPlugin {
+      #   name = "img-clip";
+      #   src = inputs.img-clip;
+      # };
+      #
       plain = with pkgs.vimPlugins; [
         # Utils
         plenary-nvim
@@ -137,10 +138,6 @@ inputs: {
         {
           plugin = cloak-nvim;
           config = lib.fileContents ../../config/nvim/plugins/cloak.lua;
-        }
-        {
-          plugin = render-markdown;
-          config = lib.fileContents ../../config/nvim/plugins/render-markdown.lua;
         }
         {
           plugin = lualine-nvim;
