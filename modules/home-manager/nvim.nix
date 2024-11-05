@@ -12,6 +12,11 @@
   xdg.configFile."nvim/lua/lsp-settings.lua".source = ../../config/nvim/lsp-settings.lua;
   xdg.configFile."nvim/lua/default.lua".source = ../../config/nvim/default.lua;
 
+  pkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+    }))
+  ];
 
   programs.neovim = {
     enable = true;
@@ -192,10 +197,12 @@
             p.tree-sitter-gitignore
             p.tree-sitter-query
             p.tree-sitter-vimdoc
+            p.tree-sitter-mermaid
             p.tree-sitter-c
             p.tree-sitter-make
             p.tree-sitter-rust
             p.tree-sitter-toml
+            p.tree-sitter-nginx
             p.tree-sitter-hcl
             p.tree-sitter-cmake
           ]);
