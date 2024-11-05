@@ -103,7 +103,6 @@
         nvim-surround
         todo-comments-nvim
         vim-test
-        CopilotChat-nvim
         
         # CMP
         cmp-path
@@ -131,6 +130,10 @@
         {
           plugin = copilot-lua;
           config = lib.fileContents ../../config/nvim/plugins/copilot.lua;
+        }
+        {
+          plugin = CopilotChat-nvim;
+          config = lib.fileContents ../../config/nvim/plugins/copilotchat.lua;
         }
         {
           plugin = render-markdown;
