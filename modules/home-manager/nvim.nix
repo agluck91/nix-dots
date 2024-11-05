@@ -103,6 +103,7 @@
         nvim-surround
         todo-comments-nvim
         vim-test
+        lsp-file-operations-nvim
         
         # CMP
         cmp-path
@@ -180,7 +181,7 @@
           config = lib.fileContents ../../config/nvim/plugins/indent-blankline.lua;
         }
         {
-          plugin = lsp-file-operations-nvim;
+          plugin = nvim-lspconfig;
           config = lib.fileContents ../../config/nvim/plugins/lspconfig.lua;
         }
         {
