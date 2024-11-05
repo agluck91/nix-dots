@@ -134,8 +134,8 @@
           config = lib.fileContents ../../config/nvim/plugins/copilot.lua;
         }
         {
-          plugin = lsp-file-operations-nvim;
-          config = lib.fileContents ../../config/nvim/plugins/lspconfig.lua;
+          plugin = render-markdown;
+          config = lib.fileContents ../../config/nvim/plugins/render-markdown.lua;
         }
         {
           plugin = cloak-nvim;
