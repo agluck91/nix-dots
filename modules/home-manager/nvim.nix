@@ -72,16 +72,21 @@
     plugins = let
       toLuaType = builtins.map (plugin: plugin // {type = "lua";});
 
-      # render-markdown = pkgs.vimUtils.buildVimPlugin {
-      #   name = "render-markdown";
-      #   src = inputs.render-markdown;
-      # };
-      #
-      # img-clip = pkgs.vimUtils.buildVimPlugin {
-      #   name = "img-clip";
-      #   src = inputs.img-clip;
-      # };
-      #
+      lsp-file-operations-nvim = pkgs.vimUtils.buildVimPlugin {
+        name = "lsp-file-operations-nvim";
+        src = inputs.lsp-file-operations-nvim;
+      };
+
+      render-markdown = pkgs.vimUtils.buildVimPlugin {
+        name = "render-markdown";
+        src = inputs.render-markdown;
+      };
+
+      img-clip = pkgs.vimUtils.buildVimPlugin {
+        name = "img-clip";
+        src = inputs.img-clip;
+      };
+
       plain = with pkgs.vimPlugins; [
         # Utils
         plenary-nvim

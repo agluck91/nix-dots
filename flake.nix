@@ -47,6 +47,10 @@
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lsp-file-operations-nvim = {
+      url = "github:antosha417/nvim-lsp-file-operations";
+      flake = false;
+    };
   };
 
   outputs = {
