@@ -161,6 +161,10 @@
           config = lib.fileContents ../../config/nvim/plugins/telescope.lua;
         }
         {
+          plugin = indent-blankline-nvim;
+          config = lib.fileContents ../../config/nvim/plugins/indent-blankline.lua;
+        }
+        {
           plugin = nvim-treesitter.withPlugins (p: [
             p.tree-sitter-nix
             p.tree-sitter-vim
