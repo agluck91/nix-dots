@@ -72,6 +72,10 @@
     plugins = let
       toLuaType = builtins.map (plugin: plugin // {type = "lua";});
 
+      avante = pkgs.vimUtils.buildVimPlugin {
+        name = "avante";
+        src = inputs.avante;
+      };
       lsp-file-operations-nvim = pkgs.vimUtils.buildVimPlugin {
         name = "lsp-file-operations-nvim";
         src = inputs.lsp-file-operations-nvim;
@@ -103,7 +107,6 @@
         nvim-surround
         todo-comments-nvim
         vim-test
-        lsp-file-operations-nvim
         
         # CMP
         cmp-path
@@ -129,6 +132,10 @@
       
       withConfig = with pkgs.vimPlugins; [
         {
+          plugin = catppuccin-nvim;
+          config = lib.fileContents ../../config/nvim/plugins/catppuccin.lua;
+        }
+        {
           plugin = copilot-lua;
           config = lib.fileContents ../../config/nvim/plugins/copilot.lua;
         }
@@ -145,12 +152,12 @@
           config = lib.fileContents ../../config/nvim/plugins/img-clip.lua;
         }
         {
-          plugin = cloak-nvim;
-          config = lib.fileContents ../../config/nvim/plugins/cloak.lua;
+          plugin = avante;
+          config = lib.fileContents ../../config/nvim/plugins/avante.lua;
         }
         {
-          plugin = catppuccin-nvim;
-          config = lib.fileContents ../../config/nvim/plugins/catppuccin.lua;
+          plugin = cloak-nvim;
+          config = lib.fileContents ../../config/nvim/plugins/cloak.lua;
         }
         {
           plugin = cloak-nvim;
