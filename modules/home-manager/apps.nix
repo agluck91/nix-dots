@@ -13,6 +13,7 @@
     xiphos
     remmina
     popsicle
+    trayscale
 
     #dev
     postgresql
