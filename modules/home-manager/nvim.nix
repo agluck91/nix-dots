@@ -148,10 +148,6 @@
           config = lib.fileContents ../../config/nvim/plugins/img-clip.lua;
         }
         {
-          plugin = avante;
-          config = lib.fileContents ../../config/nvim/plugins/avante.lua;
-        }
-        {
           plugin = cloak-nvim;
           config = lib.fileContents ../../config/nvim/plugins/cloak.lua;
         }
