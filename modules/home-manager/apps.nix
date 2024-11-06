@@ -24,7 +24,6 @@
     kubectl
     rancher
     minikube
-    warp-terminal
     postman
     deno
     go
