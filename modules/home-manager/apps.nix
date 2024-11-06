@@ -14,6 +14,7 @@
     remmina
     popsicle
     trayscale
+    lm_sensors
 
     #dev
     postgresql
