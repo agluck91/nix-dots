@@ -72,10 +72,6 @@
     plugins = let
       toLuaType = builtins.map (plugin: plugin // {type = "lua";});
 
-      avante = pkgs.vimUtils.buildVimPlugin {
-        name = "avante";
-        src = inputs.avante;
-      };
       lsp-file-operations-nvim = pkgs.vimUtils.buildVimPlugin {
         name = "lsp-file-operations-nvim";
         src = inputs.lsp-file-operations-nvim;
