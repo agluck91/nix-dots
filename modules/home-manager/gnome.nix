@@ -19,7 +19,7 @@
   home.packages = with pkgs; [
     dconf-editor
     gnome-tweaks
-    caffeine
+    caffeine-ng
     gnomeExtensions.freon
     gnomeExtensions.tiling-shell
     gnomeExtensions.system-monitor
