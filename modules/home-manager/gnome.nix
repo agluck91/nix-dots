@@ -28,7 +28,6 @@
     gnomeExtensions.bluetooth-quick-connect
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.sound-output-device-chooser
-    gnomeExtensions.ssh-quick-connect
     gnomeExtensions.systemd-manager
     gnomeExtensions.tailscale-status
   ];
