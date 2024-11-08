@@ -132,14 +132,6 @@
           config = lib.fileContents ../../config/nvim/plugins/catppuccin.lua;
         }
         {
-          plugin = copilot-lua;
-          config = lib.fileContents ../../config/nvim/plugins/copilot.lua;
-        }
-        {
-          plugin = CopilotChat-nvim;
-          config = lib.fileContents ../../config/nvim/plugins/copilotchat.lua;
-        }
-        {
           plugin = render-markdown;
           config = lib.fileContents ../../config/nvim/plugins/render-markdown.lua;
         }

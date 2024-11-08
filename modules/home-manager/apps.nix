@@ -19,13 +19,13 @@
     #dev
     postgresql
     rustup
-    docker
     nvidia-docker
     kubernetes-helm
     kubectl
     rancher
     minikube
     postman
+    chatblade
     deno
     go
     dbeaver-bin
@@ -40,6 +40,7 @@
     gh
     bottom
     eza
+    tealdeer
     btop
     lazygit
     neofetch
@@ -50,6 +51,7 @@
 
     # fonts
     fira-code-nerdfont
+    nerdfonts
 
     # utils
     dconf2nix
