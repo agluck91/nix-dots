@@ -2,7 +2,7 @@
   programs.wofi = {
     enable = true;
     settings = {
-      width = 440;
+      width = 500;
       no_actions = true;
       allow_markup = true;
     };

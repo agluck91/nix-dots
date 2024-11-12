@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
 }: {
   xdg.desktopEntries."org.gnome.Settings" = {
@@ -16,8 +17,7 @@
 
   services.mako = {
     enable = true;
-    anchor = "bottom-right";
-    margin = "24 12";
+    anchor = "bottom-center";
     padding = "24";
     defaultTimeout = 5000;
     borderRadius = 8;
@@ -33,6 +33,7 @@
       apps = "wofi --show drun --allow-images";
       terminal = "kitty";
       browser = "google-chrome-stable";
+      hyprlock = "hyprlock";
     in {
       env = [
         "BROWSER,${browser}"
@@ -53,15 +54,36 @@
         vrr = 1;
         animate_manual_resizes = true;
         animate_mouse_windowdragging = true;
+        disable_hyprland_logo = true;
+        force_default_wallpaper = 0; 
       };
 
       exec-once = [
         "${pkgs.waybar}/bin/waybar"
         "hyprdim --no-dim-when-only --persist --ignore-leaving-special --dialog-dim"
         "blueman-tray"
+        "bash /home/agluck/sd"
       ];
 
-      monitor = "DP-1,highrr,auto,auto";
+      monitor = [
+        "HDMI-A-1,preferred,auto,1"
+        "DP-1,highrr,auto,auto"
+      ];
+      workspace = [
+        "1,monitor:HDMI-A-1,default:DP-1"
+      ];
+      
+      input.touchpad = {
+          natural_scroll = true;
+          disable_while_typing = true;
+          clickfinger_behavior = 1;
+      };
+
+      gestures = {
+        workspace_swipe = true;
+        workspace_swipe_fingers = 3;
+        workspace_swipe_forever = true;
+      };
 
       general = {
         border_size = 2;
@@ -69,9 +91,8 @@
         gaps_out = "14 20 20 20";
       };
 
-      decoration = {
+      decoration = lib.mkForce {
         rounding = 8;
-        drop_shadow = false;
         blur.enabled = true;
       };
 
@@ -84,6 +105,11 @@
       binds = {
         allow_workspace_cycles = true;
       };
+
+      binde = [
+        ", XF86MonBrightnessUp, exec, light -A 10"
+        ", XF86MonBrightnessDown, exec, light -U 10"
+      ];
 
       windowrule = let
         float = regex: "float, ^(${regex})$";
@@ -101,7 +127,7 @@
         (floatTitle "Bluetooth Devices")
       ];
 
-      windowrulev2 = [
+      windowrulev2 = [ 
         "bordersize 0, fullscreen:1"
         "minsize 1000 650, floating:1"
         "opacity 0.88 0.88 1.0, title:(.*)$"
@@ -113,6 +139,7 @@
         "SHIFT_ALT, mouse:273, resizewindow"
       ];
 
+
       bind = let
         binding = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";
         bindExec = key: arg: "SUPER, ${key}, exec, ${arg}";
@@ -121,17 +148,21 @@
         mvwindow = binding "SUPER ALT" "movewindow";
         ws = binding "SUPER" "workspace";
         mvtows = binding "SUPER ALT" "movetoworkspace";
-        workspaces = [1 2 3 4 5];
+        workspaces = [1 2 3 4 5 6 7 8 9];
       in
         [
           (bindExec "B" browser)
           (bindExec "T" terminal)
           (bindExec "A" apps)
+          (bindExec "Z" hyprlock)
+
 
           "SUPER, F, togglefloating"
           "SUPER ALT, F, fullscreen"
           "SUPER, Q, killactive"
           "SUPER CTRL, Q, exit"
+          "SUPER, I, workspace, e+1"
+          "SUPER, U, workspace, e-1"
 
           # ", Print, exec, grimblast copy area"
 

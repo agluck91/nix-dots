@@ -100,9 +100,8 @@ window {
 
 #input image {
   border: none;
-  color: @red;
+  color: @blue;
 }
-
 
 /* Text */
 #text {
@@ -130,3 +129,4 @@ window {
 #entry:selected #text {
   color: @rosewater;
 }
+

@@ -49,7 +49,7 @@
         margin-right = 12;
 
         "custom/apps" = {
-          format = iconLabel flamingo "󰀻" "Apps";
+          format = iconLabel sapphire "󰀻" "Apps";
           on-click = "wofi --show drun --allow-images";
           tooltip-format = "App Launcher";
         };
@@ -57,31 +57,31 @@
         "custom/settings" = let
           settings = pkgs.gnome-control-center;
         in {
-          format = iconButton flamingo "";
+          format = iconButton sapphire "";
           on-click = "env XDG_CURRENT_DESKTOP=gnome ${settings}/bin/gnome-control-center";
           tooltip-format = "System Settings";
         };
 
         "custom/nautilus" = {
-          format = iconButton flamingo "";
+          format = iconButton sapphire "";
           on-click = "nautilus";
           tooltip-format = "Open File Manager";
         };
 
         "custom/chrome" = {
-          format = iconButton flamingo "";
+          format = iconButton sapphire "";
           on-click = "google-chrome-stable";
           tooltip-format = "Google Chrome";
         };
 
         "custom/spotify" = {
-          format = iconButton flamingo "";
+          format = iconButton sapphire "";
           on-click = "spotify";
           tooltip-format = "Spotify";
         };
 
         "custom/discord" = {
-          format = iconButton flamingo "";
+          format = iconButton sapphire "";
           on-click = "vesktop";
           tooltip-format = "Discord";
         };
@@ -98,7 +98,7 @@
         };
 
         cpu = {
-          format = iconLabel mauve "" "{usage}%";
+          format = iconLabel rosewater "" "{usage}%";
         };
 
         temperature = {
@@ -120,19 +120,19 @@
         };
 
         "custom/ssmonitor" = {
-          format = iconButton rosewater "󰹑";
+          format = iconButton sapphire "󰹑";
           tooltip-format = "Take screenshot of the entire monitor.";
           on-click = "hyprshot -m output";
         };
 
         "custom/sswindow" = {
-          format = iconButton rosewater "";
+          format = iconButton sapphire "";
           tooltip-format = "Take screenshot of a window.";
           on-click = "hyprshot -m window";
         };
 
         "custom/ssregion" = {
-          format = iconButton rosewater "󰩭";
+          format = iconButton sapphire "󰩭";
           tooltip-format = "Take screenshot of selected region.";
           on-click = "hyprshot -m region";
         };
@@ -180,19 +180,19 @@
         };
 
         "clock#time" = {
-          format = iconLabel pink "󰥔" "{:%I:%M %p}";
+          format = iconLabel green "󰥔" "{:%I:%M %p}";
           on-click = "gnome-calendar";
           tooltip = false;
         };
 
         "clock#date" = {
-          format = iconLabel mauve "" "{:%A %b %m}";
+          format = iconLabel sky "" "{:%A %b %m}";
           on-click = "gnome-calendar";
           tooltip = false;
         };
 
         "hyprland/window" = {
-          format = iconLabel flamingo "󱄅" "{title}";
+          format = iconLabel sapphire "󱄅" "{title}";
           rewrite = {
             "(.*) - Google Chrome" = "$1";
           };
@@ -218,12 +218,12 @@
           };
 
           persistent-workspaces = {
-            "*" = 5;
+            "*" = [1 2 3 4 5];
           };
         };
 
         "custom/powermenu" = {
-          format = iconButton flamingo "";
+          format = iconButton sapphire "";
           tooltip-format = "Power menu";
           on-click = let
             logout = iconLabel text "" "Logout";
@@ -233,8 +233,8 @@
             ''
               #!/bin/bash
 
-              entries="  Logout \n   Suspend \n   Reboot \n   Shutdown "
-              selected=$(echo -e $entries|wofi --width 250 --height 260 --dmenu --cache-file /dev/null | awk '{print tolower($2)}')
+              entries=" \tLogout \n  \tSuspend \n  \tReboot \n  \tShutdown"
+              selected=$(echo -e $entries|wofi --width 250 --height 260 --hide_search=true --dmenu --cache-file /dev/null | awk '{print tolower($2)}')
 
               case $selected in
                 logout)

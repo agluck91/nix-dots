@@ -21,6 +21,7 @@
     gnome-tweaks
     caffeine-ng
     gnomeExtensions.freon
+    gnomeExtensions.x11-gestures
     gnomeExtensions.tiling-shell
     gnomeExtensions.system-monitor
     gnomeExtensions.workspace-indicator

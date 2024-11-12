@@ -15,6 +15,9 @@
     ../../modules/home-manager/apps.nix
     ../../modules/home-manager/warp.nix
     ../../modules/home-manager/nvim.nix
+    ../../modules/home-manager/hyprland.nix
+    ../../modules/home-manager/wofi.nix
+    ../../modules/home-manager/waybar.nix
   ];
 
   home = {

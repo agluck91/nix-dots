@@ -1,5 +1,3 @@
-require("lsp-file-operations").setup()
-
 local x = vim.diagnostic.severity
 
 -- Sets global diagnostic config

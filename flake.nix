@@ -34,18 +34,6 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    render-markdown = {
-      url = "github:MeanderingProgrammer/render-markdown.nvim";
-      flake = false;
-    };
-    img-clip = {
-      url = "github:HakonHarnes/img-clip.nvim";
-      flake = false;
-    };
-    avante = {
-      url = "github:yetone/avante.nvim/main";
-      flake = false;
-    };
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";

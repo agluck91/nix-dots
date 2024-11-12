@@ -56,23 +56,6 @@
         "type": "github"
       }
     },
-    "avante": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1730869622,
-        "narHash": "sha256-B83/ZS9E7mMwaHV+PudCN+caa5ezcEEvqJv5LulJmJA=",
-        "owner": "yetone",
-        "repo": "avante.nvim",
-        "rev": "c516883b99a48a3a843673afe3ebdc4648401fad",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yetone",
-        "ref": "main",
-        "repo": "avante.nvim",
-        "type": "github"
-      }
-    },
     "base16": {
       "inputs": {
         "fromYaml": "fromYaml"
@@ -651,22 +634,6 @@
         "type": "github"
       }
     },
-    "img-clip": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1724665867,
-        "narHash": "sha256-TTfRow1rrRZ3+5YPeYAQc+2fsb42wUxTMEr6kfUiKXo=",
-        "owner": "HakonHarnes",
-        "repo": "img-clip.nvim",
-        "rev": "28a32d811d69042f4fa5c3d5fa35571df2bc1623",
-        "type": "github"
-      },
-      "original": {
-        "owner": "HakonHarnes",
-        "repo": "img-clip.nvim",
-        "type": "github"
-      }
-    },
     "lsp-file-operations-nvim": {
       "flake": false,
       "locked": {
@@ -796,34 +763,15 @@
         "type": "github"
       }
     },
-    "render-markdown": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1730860610,
-        "narHash": "sha256-9xGEsKJ/KMuHXOt/Dg72OQqsro6Y0tbzwt+kWw3sqxM=",
-        "owner": "MeanderingProgrammer",
-        "repo": "render-markdown.nvim",
-        "rev": "901838c63d644e27ed4b591fa5c5d587cad9e102",
-        "type": "github"
-      },
-      "original": {
-        "owner": "MeanderingProgrammer",
-        "repo": "render-markdown.nvim",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "alejandra": "alejandra",
-        "avante": "avante",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
-        "img-clip": "img-clip",
         "lsp-file-operations-nvim": "lsp-file-operations-nvim",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable_2",
-        "render-markdown": "render-markdown",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix"
       }

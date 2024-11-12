@@ -6,7 +6,6 @@
 }: {
   home.packages = [pkgs.lazygit];
 
-  # Enable management of XDG base directories
   xdg.enable = lib.mkDefault true;
   xdg.configFile."nvim/lua/lsp-servers.lua".source = ../../config/nvim/lsp-servers.lua;
   xdg.configFile."nvim/lua/lsp-settings.lua".source = ../../config/nvim/lsp-settings.lua;
@@ -20,9 +19,7 @@
     vimAlias = true;
     vimdiffAlias = true;
 
-    extraLuaConfig =
-      # lua
-      ''
+    extraLuaConfig = ''
         require "default";
       '';
 
@@ -51,6 +48,8 @@
       terraform-ls
       sqls
       rust-analyzer
+      hyprls
+
       
       # # Formatters --
       prettierd
@@ -75,14 +74,6 @@
       lsp-file-operations-nvim = pkgs.vimUtils.buildVimPlugin {
         name = "lsp-file-operations-nvim";
         src = inputs.lsp-file-operations-nvim;
-      };
-      render-markdown = pkgs.vimUtils.buildVimPlugin {
-        name = "render-markdown";
-        src = inputs.render-markdown;
-      };
-      img-clip = pkgs.vimUtils.buildVimPlugin {
-        name = "img-clip";
-        src = inputs.img-clip;
       };
 
       plain = with pkgs.vimPlugins; [
@@ -124,6 +115,7 @@
         lazygit-nvim
         nvim-surround
         telescope-fzf-native-nvim
+        lsp-file-operations-nvim 
       ];
       
       withConfig = with pkgs.vimPlugins; [
@@ -132,12 +124,20 @@
           config = lib.fileContents ../../config/nvim/plugins/catppuccin.lua;
         }
         {
-          plugin = render-markdown;
+          plugin = copilot-lua;
+          config = lib.fileContents ../../config/nvim/plugins/copilot.lua;
+        }
+        {
+          plugin = render-markdown-nvim;
           config = lib.fileContents ../../config/nvim/plugins/render-markdown.lua;
         }
         {
-          plugin = img-clip;
+          plugin = img-clip-nvim;
           config = lib.fileContents ../../config/nvim/plugins/img-clip.lua;
+        }
+        {
+          plugin = avante-nvim;
+          config = lib.fileContents ../../config/nvim/plugins/avante.lua;
         }
         {
           plugin = cloak-nvim;
@@ -211,6 +211,7 @@
             p.tree-sitter-nginx
             p.tree-sitter-hcl
             p.tree-sitter-cmake
+            p.tree-sitter-hyprlang
           ]);
           config = lib.fileContents ../../config/nvim/plugins/treesitter.lua;
         }

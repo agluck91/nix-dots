@@ -31,8 +31,9 @@
         layout = "us";
         variant = "";
       };
-      videoDrivers = ["nvidia"];
+      videoDrivers = ["nvidia" "modesetting"];
       displayManager.gdm.enable = true;
+      displayManager.gdm.wayland = true;
       desktopManager.gnome = {
         enable = true;
         extraGSettingsOverridePackages = [pkgs.mutter];
@@ -42,9 +43,22 @@
         '';
       };
     };
+    logind.extraConfig = ''
+      # don’t shutdown when power button is short-pressed
+      HandleLidSwitchDocked=ignore
+    '';
     printing.enable = true;
     openssh.enable = true;
     tailscale.enable = true;
+    touchegg.enable = true;
+  };
+
+  systemd = {
+    services = {
+      nvidia-suspend.enable = false;
+      nvidia-resume.enable = false;
+      nvidia-hibernate.enable = false;
+    };
   };
 
   security.rtkit.enable = true;
@@ -52,12 +66,14 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   virtualisation.libvirtd.enable = true;
+  virtualisation.docker.enable = true;
 
   programs = {
     dconf.enable = true;
     zsh.enable = true;
     firefox.enable = true;
     virt-manager.enable = true;
+    light.enable = true;
   };
 
   users = {
@@ -65,7 +81,7 @@
     users.agluck = {
       isNormalUser = true;
       description = "agluck";
-      extraGroups = ["networkmanager" "wheel" "audio"];
+      extraGroups = ["networkmanager" "wheel" "audio" "video" "docker"];
     };
   };
 
@@ -87,8 +103,9 @@
     ];
     pathsToLink = ["/share/zsh"];
     shells = with pkgs; [zsh];
-    sessionVariables.NIXOS_OZONE_WL = "1";
   }; 
+
+  hardware.acpilight.enable = true;
 
   hardware.graphics = {
     enable = true;
@@ -122,12 +139,11 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
   hardware.nvidia.prime = {
     sync.enable = true;
-
 		# Make sure to use the correct Bus ID values for your system!
 		nvidiaBusId = "PCI:1:0:0";
     amdgpuBusId = "PCI:6:0:0";

@@ -146,39 +146,6 @@ local servers = {
       },
     },
   },
-  -- Ansible
-  ansiblels = {},
-  -- Docker
-  dockerls = {},
-  -- YAML
-  yamlls = {},
-  -- TOML
-  tomls = {},
-  -- Terraform
-  terraformls = {},
-  -- Markdown
-  marksman = {},
-  -- Rust
-  rust_analyzer = {
-    settings = {
-      ["rust-analyzer"] = {
-        checkOnSave = {
-          command = "clippy",
-        },
-      },
-    },
-  },
-  -- Go
-  gopls = {
-    settings = {
-      gopls = {
-        analyses = {
-          unusedparams = true,
-        },
-        staticcheck = true,
-      },
-    },
-  },
   -- TailwindCSS
   tailwindcss = {
     settings = {

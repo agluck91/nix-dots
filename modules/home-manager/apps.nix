@@ -6,11 +6,14 @@
     kooha
     chatgpt-cli
     todoist
+    todoist-electron
+    teams-for-linux
     obsidian
     _1password-gui
     _1password-cli
     obs-studio
     xiphos
+    zoom-us
     remmina
     popsicle
     trayscale
