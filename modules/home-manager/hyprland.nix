@@ -125,6 +125,7 @@
 
         (floatTitle "Volume Control")
         (floatTitle "Bluetooth Devices")
+        (floatTitle "1Password")
       ];
 
       windowrulev2 = [ 
@@ -218,7 +219,7 @@
       disable_loading_bar = true;
       grace = 300;
 
-      background = [
+      background = lib.mkForce [
         {
           path = "screenshot";
           blur_passes = 3;
@@ -226,7 +227,7 @@
         }
       ];
 
-      input-field = [
+      input-field = lib.mkForce [
         {
           size = "200, 50";
           position = "0, -80";

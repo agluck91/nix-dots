@@ -22,6 +22,8 @@
     #dev
     postgresql
     rustup
+    libpqxx
+    libgcc
     nvidia-docker
     kubernetes-helm
     kubectl

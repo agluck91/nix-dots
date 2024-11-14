@@ -180,13 +180,14 @@
         };
 
         "clock#time" = {
-          format = iconLabel green "󰥔" "{:%I:%M %p}";
+          timezone = "EST";
+          format = iconLabel sapphire "󰥔" "{:%I:%M %p}";
           on-click = "gnome-calendar";
           tooltip = false;
         };
 
         "clock#date" = {
-          format = iconLabel sky "" "{:%A %b %m}";
+          format = iconLabel sapphire "" "{:%A %b %d}";
           on-click = "gnome-calendar";
           tooltip = false;
         };
@@ -233,7 +234,7 @@
             ''
               #!/bin/bash
 
-              entries=" \tLogout \n  \tSuspend \n  \tReboot \n  \tShutdown"
+              entries=" \tLogout \n  \tSuspend \n  \tReboot \n  \tShutdown \n \tLock"
               selected=$(echo -e $entries|wofi --width 250 --height 260 --hide_search=true --dmenu --cache-file /dev/null | awk '{print tolower($2)}')
 
               case $selected in
@@ -245,6 +246,8 @@
                   exec systemctl reboot;;
                 shutdown)
                   exec systemctl poweroff -i;;
+                lock)
+                  exec hyprlock;;
               esac
             '';
         };

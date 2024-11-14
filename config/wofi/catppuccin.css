@@ -86,21 +86,8 @@ window {
 
 /* Input */
 #input {
-  box-shadow: none;
-  padding: 4px 8px;
-  border-radius: 1.2em;
-  color: @text;
-  background-color: @mantle;
-  border: 2px solid @surface1;
-}
-
-#input:focus {
-  border: 2px solid @overlay1;
-}
-
-#input image {
-  border: none;
-  color: @blue;
+  display: none;
+  margin: -1000px 5px;
 }
 
 /* Text */
