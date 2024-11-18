@@ -144,6 +144,10 @@
           config = lib.fileContents ../../config/nvim/plugins/avante.lua;
         }
         {
+          plugin = nvim-cmp;
+          config = lib.fileContents ../../config/nvim/plugins/cmp.lua;
+        }
+        {
           plugin = cloak-nvim;
           config = lib.fileContents ../../config/nvim/plugins/cloak.lua;
         }

@@ -1,4 +1,4 @@
-local alpha = require "config.nvim.plugins.dashboard"
+local alpha = require "alpha"
 local dashboard = require "alpha.themes.dashboard"
 
 local function getGreeting()
