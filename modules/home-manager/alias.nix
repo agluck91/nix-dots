@@ -1,5 +1,6 @@
 {
   #nix Aliases
+
   nix-r = "sudo nixos-rebuild switch --flake ~/nix-dots#nixos";
   nix-u = "sudo flakes update";
   nix-e = "nvim ~/nix-dots";
@@ -11,7 +12,7 @@
   la = "exa --icons -gh --group-directories-first -a";
   lla = "exa --icons -gh --group-directories-first -la";
   llt = "exa --icons --group-directories-first -T";
-  cc  =  "/bin/cat";
+  cc = "/bin/cat";
   cat = "bat -p -P";
   rm = "rm -i";
   cp = "cp -i";

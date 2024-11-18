@@ -74,6 +74,7 @@
         # Utils
         plenary-nvim
         dressing-nvim
+        hologram-nvim
         nvim-web-devicons
         vim-tmux-navigator
         nui-nvim

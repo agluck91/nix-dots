@@ -16,6 +16,8 @@
     deno
     go
     poetry
+    pulumi-bin
+    opentofu
     typescript
 
     # terminal

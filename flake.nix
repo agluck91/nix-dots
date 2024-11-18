@@ -1,5 +1,5 @@
 {
-  description = "Andrew's NixOS configuration";
+  description = "Andrew Configurator";
 
   inputs = {
     # NixOS official package sources
@@ -19,7 +19,8 @@
     };
 
     # alejandra nix formatter
-    alejandra = { url = "github:kamadorueda/alejandra/3.0.0";
+    alejandra = {
+      url = "github:kamadorueda/alejandra/3.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -38,9 +39,9 @@
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    lsp-file-operations-nvim = {
-      url = "github:antosha417/nvim-lsp-file-operations";
-      flake = false;
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -49,17 +50,40 @@
     nixpkgs-stable,
     stylix,
     home-manager,
+    nix-darwin,
     ...
   } @ inputs: {
-    # The host with the hostname `nixos-desktop` will use this configuration
+    darwinConfigurations."mac" = nix-darwin.lib.darwinSystem rec {
+      system = "aarch64-darwin";
+
+      specialArgs = {
+        inherit inputs;
+        pkgs-stable = import nixpkgs-stable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      };
+
+      modules = [
+        stylix.darwinModules.stylix
+        ./hosts/mac/configuration.nix
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.backupFileExtension = "hm-backup";
+          home-manager.users.agluck = import ./hosts/mac/home.nix;
+          home-manager.extraSpecialArgs = specialArgs;
+        }
+      ];
+    };
+
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
 
       specialArgs = {
         inherit inputs;
-        # Configure parameters to use nixpkgs-unstable
         pkgs-stable = import nixpkgs-stable {
-          # Refer to the `system` parameter form the outer scope
           inherit system;
           config.allowUnfree = true;
         };
@@ -68,15 +92,8 @@
       modules = [
         stylix.nixosModules.stylix
 
-        # NixOS System configurations
         ./hosts/nixos/configuration.nix
-
-        # make home-manager as a module of nixos
-        # so tat home-manager configuration will be deployed automatically
-        # when executing `nixos-rebuild switch`
         home-manager.nixosModules.home-manager
-
-        # home-manager settings
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
