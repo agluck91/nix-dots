@@ -20,8 +20,8 @@
     vimdiffAlias = true;
 
     extraLuaConfig = ''
-        require "default";
-      '';
+      require "default";
+    '';
 
     extraPackages = with pkgs; [
       # # Tools --
@@ -50,7 +50,6 @@
       rust-analyzer
       hyprls
 
-      
       # # Formatters --
       prettierd
       stylua
@@ -71,11 +70,6 @@
     plugins = let
       toLuaType = builtins.map (plugin: plugin // {type = "lua";});
 
-      lsp-file-operations-nvim = pkgs.vimUtils.buildVimPlugin {
-        name = "lsp-file-operations-nvim";
-        src = inputs.lsp-file-operations-nvim;
-      };
-
       plain = with pkgs.vimPlugins; [
         # Utils
         plenary-nvim
@@ -94,7 +88,7 @@
         nvim-surround
         todo-comments-nvim
         vim-test
-        
+
         # CMP
         cmp-path
         cmp-buffer
@@ -114,9 +108,8 @@
         lazygit-nvim
         nvim-surround
         telescope-fzf-native-nvim
-        lsp-file-operations-nvim 
       ];
-      
+
       withConfig = with pkgs.vimPlugins; [
         {
           plugin = alpha-nvim;
@@ -155,6 +148,10 @@
           config = lib.fileContents ../../config/nvim/plugins/auto-pairs.lua;
         }
         {
+          plugin = auto-session;
+          config = lib.fileContents ../../config/nvim/plugins/auto-session.lua;
+        }
+        {
           plugin = conform-nvim;
           config = lib.fileContents ../../config/nvim/plugins/conform.lua;
         }
@@ -169,7 +166,7 @@
         {
           plugin = noice-nvim;
           config = lib.fileContents ../../config/nvim/plugins/noice.lua;
-        }     
+        }
         {
           plugin = oil-nvim;
           config = lib.fileContents ../../config/nvim/plugins/oil.lua;

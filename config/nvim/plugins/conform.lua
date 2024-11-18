@@ -11,6 +11,8 @@ conform.setup {
     html = { "prettier" },
     json = { "prettier" },
     yaml = { "prettier" },
+    rust = { "rustfmt" },
+    go = { "gofmt", "goimports" },
     markdown = { "prettier" },
     graphql = { "prettier" },
     liquid = { "prettier" },
