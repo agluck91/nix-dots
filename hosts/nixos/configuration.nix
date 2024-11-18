@@ -103,6 +103,10 @@
     ];
     pathsToLink = ["/share/zsh"];
     shells = with pkgs; [zsh];
+    sessionVariables = {
+      EDITOR = "nvim";
+      TERMINAL = "kitty";
+    };
   }; 
 
   hardware.acpilight.enable = true;

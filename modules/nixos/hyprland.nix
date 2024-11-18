@@ -31,7 +31,6 @@
     libnotify
     pavucontrol
     networkmanagerapplet
-    nautilus
     gnome-system-monitor
     gnome-calculator
     gnome-control-center

@@ -49,7 +49,7 @@
         margin-right = 12;
 
         "custom/apps" = {
-          format = iconLabel sapphire "󰀻" "Apps";
+          format = iconLabel blue "󰀻" "Apps";
           on-click = "wofi --show drun --allow-images";
           tooltip-format = "App Launcher";
         };
@@ -57,31 +57,31 @@
         "custom/settings" = let
           settings = pkgs.gnome-control-center;
         in {
-          format = iconButton sapphire "";
+          format = iconButton blue "";
           on-click = "env XDG_CURRENT_DESKTOP=gnome ${settings}/bin/gnome-control-center";
           tooltip-format = "System Settings";
         };
 
         "custom/nautilus" = {
-          format = iconButton sapphire "";
-          on-click = "nautilus";
+          format = iconButton blue "";
+          on-click = "nemo";
           tooltip-format = "Open File Manager";
         };
 
         "custom/chrome" = {
-          format = iconButton sapphire "";
+          format = iconButton blue "";
           on-click = "google-chrome-stable";
           tooltip-format = "Google Chrome";
         };
 
         "custom/spotify" = {
-          format = iconButton sapphire "";
+          format = iconButton blue "";
           on-click = "spotify";
           tooltip-format = "Spotify";
         };
 
         "custom/discord" = {
-          format = iconButton sapphire "";
+          format = iconButton blue "";
           on-click = "vesktop";
           tooltip-format = "Discord";
         };
@@ -98,16 +98,37 @@
         };
 
         cpu = {
-          format = iconLabel rosewater "" "{usage}%";
+          format = iconLabel blue "" "{usage}%";
         };
 
         temperature = {
-          format = iconLabel pink "" "{temperatureC}󰔄";
+          format = iconLabel blue "" "{temperatureC}󰔄";
         };
 
         memory = {
-          format = iconLabel maroon "" "{used:0.1f}G/{total:0.1f}G";
+          format = iconLabel blue "" "{used:0.1f}G/{total:0.1f}G";
         };
+        battery = {
+          format = iconButton blue "<span font='Font Awesome 5 Free 11'>{icon}</span>";
+          format-icons = {
+            default = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+            charging = ["󰢟" "󰢜" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂅"];
+          };
+          format-time = "{H}h{M}m";
+          format-charging = iconButton blue"<span font='Font Awesome 5 Free 11'>{icon}</span>";
+          format-full = iconLabel blue "<span font='Font Awesome 5 Free 11'>{icon}</span>"  "Full";
+          format-warning = iconButton yellow "<span font='Font Awesome 5 Free 11'>{icon}</span>";
+          format-critical = iconButton red "<span font='Font Awesome 5 Free 11'>{icon}</span>";
+          format-omgosh = iconLabel red "" "Charge Now!";
+          interval = 5;
+          states = {
+            warning = 25;
+            critical = 15;
+            omgosh = 10;
+          };
+          tooltip = true;
+
+	      };
 
         "group/stats" = {
           orientation = "horizontal";
@@ -120,19 +141,19 @@
         };
 
         "custom/ssmonitor" = {
-          format = iconButton sapphire "󰹑";
+          format = iconButton blue "󰹑";
           tooltip-format = "Take screenshot of the entire monitor.";
           on-click = "hyprshot -m output";
         };
 
         "custom/sswindow" = {
-          format = iconButton sapphire "";
+          format = iconButton blue "";
           tooltip-format = "Take screenshot of a window.";
           on-click = "hyprshot -m window";
         };
 
         "custom/ssregion" = {
-          format = iconButton sapphire "󰩭";
+          format = iconButton blue "󰩭";
           tooltip-format = "Take screenshot of selected region.";
           on-click = "hyprshot -m region";
         };
@@ -142,13 +163,14 @@
           modules = [
             "custom/ssmonitor"
             "custom/sswindow"
-            "custom/ssregion"
+            "custom/ssregion" 
           ];
         };
 
         pulseaudio = {
           scroll-step = 2;
           on-click = "pavucontrol";
+          on-click-right = "pamixer -t";
           format = iconLabel blue "{icon}" "{volume}%";
           format-bluetooth = iconLabel blue "{icon}" "{volume}";
           format-muted = largeIcon rosewater "";
@@ -175,25 +197,25 @@
           format-ethernet = iconLabel blue "" "{bandwidthTotalBits}";
           format-linked = "{ifname} (No IP)";
           format-wifi = iconLabel blue "" "{signalStrength}%";
-          tooltip-format = "Connected to {essid} {ifname} via {gwaddr}";
+          tooltip-format = "Connected to {essid} on {ifname}";
           on-click = "nm-connection-editor";
         };
 
         "clock#time" = {
           timezone = "EST";
-          format = iconLabel sapphire "󰥔" "{:%I:%M %p}";
+          format = iconLabel blue "󰥔" "{:%I:%M %p}";
           on-click = "gnome-calendar";
           tooltip = false;
         };
 
         "clock#date" = {
-          format = iconLabel sapphire "" "{:%A %b %d}";
+          format = iconLabel blue "" "{:%A %b %d}";
           on-click = "gnome-calendar";
           tooltip = false;
         };
 
         "hyprland/window" = {
-          format = iconLabel sapphire "󱄅" "{title}";
+          format = iconLabel blue "󱄅" "{title}";
           rewrite = {
             "(.*) - Google Chrome" = "$1";
           };
@@ -205,17 +227,13 @@
           on-click = "activate";
           active-only = false;
           all-outputs = true;
-          format = "{}";
+          format = " {icon} ";
           format-icons = {
-            "urgent" = "";
-            "active" = "";
-            "default" = "";
-          };
-
-          tray = {
-            icon-size = 24;
-            spacing = 8;
-            show-passive-items = true;
+            "1" = " ";
+            "2" = " ";
+            "3" = " ";
+            "4" = "󰍥 ";
+            "5" = "󱄅 ";
           };
 
           persistent-workspaces = {
@@ -224,7 +242,7 @@
         };
 
         "custom/powermenu" = {
-          format = iconButton sapphire "";
+          format = iconButton blue "";
           tooltip-format = "Power menu";
           on-click = let
             logout = iconLabel text "" "Logout";
@@ -253,9 +271,7 @@
         };
 
         modules-left = [
-          "custom/apps"
-          "tray"
-          "hyprland/window"
+          "group/quick-links"
         ];
 
         modules-center = [
@@ -269,7 +285,7 @@
 
         modules-right = [
           "group/screenshot"
-          "group/quick-links"
+          "battery"
           "custom/powermenu"
         ];
       };

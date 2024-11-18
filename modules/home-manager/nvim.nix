@@ -120,6 +120,10 @@
       
       withConfig = with pkgs.vimPlugins; [
         {
+          plugin = alpha-nvim;
+          config = lib.fileContents ../../config/nvim/plugins/dashboard.lua;
+        }
+        {
           plugin = catppuccin-nvim;
           config = lib.fileContents ../../config/nvim/plugins/catppuccin.lua;
         }

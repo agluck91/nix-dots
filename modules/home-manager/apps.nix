@@ -2,7 +2,9 @@
   home.packages = with pkgs; [
     slack
     vesktop
+    pamixer
     google-chrome
+    chromium
     kooha
     chatgpt-cli
     todoist
@@ -18,6 +20,9 @@
     popsicle
     trayscale
     lm_sensors
+    nemo-with-extensions
+    nautilus
+    localsend
 
     #dev
     postgresql
@@ -27,6 +32,8 @@
     nvidia-docker
     kubernetes-helm
     kubectl
+    k9s
+    lazydocker
     rancher
     minikube
     postman
@@ -40,10 +47,18 @@
 
     # terminal
     ripgrep
+    awscli2
+    sesh
+    gum
     mosh
+    unimatrix
+    asciiquarium-transparent
+    pipes
     bat
     gh
     bottom
+    jq
+    yq
     eza
     tealdeer
     btop

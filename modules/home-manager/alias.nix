@@ -1,4 +1,10 @@
 {
+  #nix Aliases
+  nix-r = "sudo nixos-rebuild switch --flake ~/nix-dots#nixos";
+  nix-u = "sudo flakes update";
+  nix-e = "nvim ~/nix-dots";
+  nix-g = "nix collect-garbage -d";
+
   #System Aliases
   ls = "exa --icons -gh --group-directories-first";
   ll = "exa --icons -gh --group-directories-first -l";
