@@ -25,7 +25,6 @@ M.on_attach = function(__client, bufnr)
   lspmap("n", "gD", vim.lsp.buf.declaration, opts "Go to declaration")
   lspmap("n", "gd", vim.lsp.buf.definition, opts "Go to definition")
 
-  lspmap("n", "K", vim.lsp.buf.hover, opts "Hover")
   lspmap("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts "Workspace Symbols")
   lspmap("n", "<leader>vwa", vim.lsp.buf.add_workspace_folder, opts "Add workspace folder")
   lspmap("n", "<leader>vwr", vim.lsp.buf.remove_workspace_folder, opts "Remove workspace folder")

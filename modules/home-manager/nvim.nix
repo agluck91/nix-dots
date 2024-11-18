@@ -152,7 +152,11 @@
         }
         {
           plugin = nvim-autopairs;
-          config = lib.fileContents ../../config/nvim/plugins/autopairs.lua;
+          config = lib.fileContents ../../config/nvim/plugins/auto-pairs.lua;
+        }
+        {
+          plugin = conform-nvim;
+          config = lib.fileContents ../../config/nvim/plugins/conform.lua;
         }
         {
           plugin = hover-nvim;

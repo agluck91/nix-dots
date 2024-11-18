@@ -32,6 +32,10 @@ vim.keymap.set("n", "<leader>ccr", "<cmd>e ~/.config/nvim/lua/setup/remap.lua<CR
 --Keymaps for lazygit
 vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>")
 
+--Keymaps for Hover
+vim.keymap.set("n", "K", require("hover").hover, {desc = "hover.nvim"})
+vim.keymap.set("n", "gK", require("hover").hover_select, {desc = "hover.nvim (select)"})
+
 --Vim Config
 vim.opt.nu = true
 vim.opt.relativenumber = true
