@@ -155,6 +155,10 @@
           config = lib.fileContents ../../config/nvim/plugins/autopairs.lua;
         }
         {
+          plugin = hover-nvim;
+          config = lib.fileContents ../../config/nvim/plugins/hover.lua;
+        }
+        {
           plugin = lualine-nvim;
           config = lib.fileContents ../../config/nvim/plugins/lualine.lua;
         }
