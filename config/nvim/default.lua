@@ -29,6 +29,9 @@ vim.cmd('let test#strategy = "vimux"')
 vim.keymap.set("n", "<leader>ccp", "<cmd>e ~/.config/nvim/lua/setup/packer.lua<CR>");
 vim.keymap.set("n", "<leader>ccr", "<cmd>e ~/.config/nvim/lua/setup/remap.lua<CR>");
 
+--Keymaps for lazygit
+vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>")
+
 --Vim Config
 vim.opt.nu = true
 vim.opt.relativenumber = true

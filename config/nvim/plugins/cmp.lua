@@ -60,11 +60,6 @@ cmp.setup {
     { name = "luasnip" }, -- snippets
     { name = "buffer" }, -- text within current buffer
     { name = "path" }, -- file system paths
-    {
-      name = "lazydev",
-      -- set group index to 0 to skip loading LuaLS completions
-      group_index = 0,
-    },
   },
 
   -- configure lspkind for vs-code like pictograms in completion menu

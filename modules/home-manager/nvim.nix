@@ -99,7 +99,6 @@
         cmp-path
         cmp-buffer
         cmp-nvim-lsp
-        nvim-cmp
         luasnip
         cmp_luasnip
         friendly-snippets
@@ -152,8 +151,8 @@
           config = lib.fileContents ../../config/nvim/plugins/cloak.lua;
         }
         {
-          plugin = cloak-nvim;
-          config = lib.fileContents ../../config/nvim/plugins/cloak.lua;
+          plugin = nvim-autopairs;
+          config = lib.fileContents ../../config/nvim/plugins/autopairs.lua;
         }
         {
           plugin = lualine-nvim;
