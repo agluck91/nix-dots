@@ -3,8 +3,6 @@
     #dev
     postgresql
     rustup
-    libpqxx
-    libgcc
     kubernetes-helm
     kubectl
     k9s
@@ -25,12 +23,9 @@
     ripgrep
     gpclient
     dust
-    dua
     bandwhich
     nushell
     hyperfine
-    lm_sensors
-    sshfs
     cheat
     speedtest-cli
     awscli2
@@ -53,7 +48,6 @@
     neofetch
     python3
     nurl
-    eza
 
     # fonts
     fira-code-nerdfont
