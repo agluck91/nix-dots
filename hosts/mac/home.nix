@@ -4,6 +4,7 @@
     ../../modules/home-manager/tmux.nix
     ../../modules/home-manager/volta.nix
     ../../modules/home-manager/nvim.nix
+    ../../modules/home-manager/apps.nix
   ];
 
   home.stateVersion = "24.05";
