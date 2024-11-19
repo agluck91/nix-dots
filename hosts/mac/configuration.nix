@@ -1,12 +1,6 @@
 {pkgs, ...}: let
   username = "agluck";
 in {
-  imports = [
-    ../../modules/darwin/system-defaults.nix
-    ../../modules/darwin/homebrew.nix
-    ../../modules/darwin/stylix.nix
-  ];
-
   # Used for backwards compatibility.
   system.stateVersion = 5;
 
