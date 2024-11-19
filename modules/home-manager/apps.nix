@@ -31,6 +31,7 @@
     hyperfine
     lm_sensors
     sshfs
+    cheat
     speedtest-cli
     awscli2
     sesh
