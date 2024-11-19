@@ -21,7 +21,6 @@
 
     # terminal
     ripgrep
-    gpclient
     dust
     bandwhich
     nushell

@@ -33,7 +33,7 @@ in {
     keyMode = "vi";
     prefix = "C-s";
     mouse = true;
-    terminal = "screen-256color";
+    terminal = "xterm-256color";
     baseIndex = 1;
     extraConfig = lib.fileContents ../../config/tmux/tmux.conf;
 
