@@ -18,12 +18,20 @@
     poetry
     pulumi-bin
     opentofu
+    ansible
     typescript
 
     # terminal
     ripgrep
+    gpclient
+    dust
+    dua
+    bandwhich
+    nushell
+    hyperfine
     lm_sensors
     sshfs
+    speedtest-cli
     awscli2
     sesh
     gum
