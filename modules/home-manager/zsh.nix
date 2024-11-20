@@ -72,6 +72,28 @@
 
         export SHELL="$(which zsh)"
 
+        # Get Icon for Scripts
+        case "$(uname -s)" in
+            Darwin) OS_ICON=" " ;;
+            Linux)
+                case "$(awk -F= '/^ID=/{print $2}' /etc/os-release | tr -d '\"')" in
+                    ubuntu) OS_ICON=" " ;;
+                    fedora) OS_ICON=" " ;;
+                    arch) OS_ICON=" " ;;
+                    pop) OS_ICON=" " ;;
+                    nixos) OS_ICON=" " ;;
+                    centos) OS_ICON=" " ;;
+                    alpine) OS_ICON=" " ;;
+                    *) OS_ICON=" " ;;
+                esac
+                ;;
+            CYGWIN*|MINGW*|MSYS*) OS_ICON=" " ;;
+            *) OS_ICON=" " ;;
+        esac
+
+        export OS_ICON
+
+
         #VOLTA
         export VOLTA_HOME="$HOME/.volta"
         export PATH="$VOLTA_HOME/bin:$PATH"
