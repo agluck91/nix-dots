@@ -122,7 +122,7 @@
         }
         {
           plugin = nvim-notify;
-          config = lib.fileContents ./lua/plugins/notify.lua;
+          config = lib.fileContents ../../config/nvim/plugins/notify.lua;
         }
         {
           plugin = copilot-lua;
