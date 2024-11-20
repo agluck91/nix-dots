@@ -97,6 +97,8 @@
         #VOLTA
         export VOLTA_HOME="$HOME/.volta"
         export PATH="$VOLTA_HOME/bin:$PATH"
+
+        clear && neofetch --size 30% --logo
       '';
   };
 }
