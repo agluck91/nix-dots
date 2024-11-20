@@ -121,6 +121,10 @@
           config = lib.fileContents ../../config/nvim/plugins/catppuccin.lua;
         }
         {
+          plugin = nvim-notify;
+          config = lib.fileContents ./lua/plugins/notify.lua;
+        }
+        {
           plugin = copilot-lua;
           config = lib.fileContents ../../config/nvim/plugins/copilot.lua;
         }
