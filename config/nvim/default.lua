@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>jk", "<cmd>Oil<CR>")
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- Vim Navigation
@@ -18,23 +18,23 @@ vim.keymap.set("n", "<c-l>", ":TmuxNavigateRight<cr>")
 vim.keymap.set("n", "<c-\\>", ":TmuxNavigatePrevious<cr>")
 
 -- Vim Test
-vim.keymap.set('n', '<leader>tn', ':TestNearest<cr>')
-vim.keymap.set('n', '<leader>tf', '<cmd>TestFile<cr>')
-vim.keymap.set('n', '<leader>ts', '<cmd>TestSuite<cr>')
-vim.keymap.set('n', '<leader>tl', '<cmd>TestLast<cr>')
-vim.keymap.set('n', '<leader>tv', '<cmd>TestVisit<cr>')
+vim.keymap.set("n", "<leader>tn", ":TestNearest<cr>")
+vim.keymap.set("n", "<leader>tf", "<cmd>TestFile<cr>")
+vim.keymap.set("n", "<leader>ts", "<cmd>TestSuite<cr>")
+vim.keymap.set("n", "<leader>tl", "<cmd>TestLast<cr>")
+vim.keymap.set("n", "<leader>tv", "<cmd>TestVisit<cr>")
 vim.cmd('let test#strategy = "vimux"')
 
 --Keymaps for config
-vim.keymap.set("n", "<leader>ccp", "<cmd>e ~/.config/nvim/lua/setup/packer.lua<CR>");
-vim.keymap.set("n", "<leader>ccr", "<cmd>e ~/.config/nvim/lua/setup/remap.lua<CR>");
+vim.keymap.set("n", "<leader>ccp", "<cmd>e ~/.config/nvim/lua/setup/packer.lua<CR>")
+vim.keymap.set("n", "<leader>ccr", "<cmd>e ~/.config/nvim/lua/setup/remap.lua<CR>")
 
 --Keymaps for lazygit
 vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>")
 
 --Keymaps for Hover
-vim.keymap.set("n", "K", require("hover").hover, {desc = "hover.nvim"})
-vim.keymap.set("n", "gK", require("hover").hover_select, {desc = "hover.nvim (select)"})
+vim.keymap.set("n", "K", require("hover").hover, { desc = "hover.nvim" })
+vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
 
 --Vim Config
 vim.opt.nu = true
@@ -69,17 +69,38 @@ vim.opt.wildmenu = true
 
 -- filetype related
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {"gitcommit"},
-    callback = function(ev)
-        vim.api.nvim_set_option_value("textwidth", 72, {scope = "local"})
-    end
+	pattern = { "gitcommit" },
+	callback = function(ev)
+		vim.api.nvim_set_option_value("textwidth", 72, { scope = "local" })
+	end,
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {"markdown"},
-    callback = function(ev)
-        vim.api.nvim_set_option_value("textwidth", 0, {scope = "local"})
-        vim.api.nvim_set_option_value("wrapmargin", 0, {scope = "local"})
-        vim.api.nvim_set_option_value("linebreak", true, {scope = "local"})
-    end
+	pattern = { "markdown" },
+	callback = function(ev)
+		vim.api.nvim_set_option_value("textwidth", 0, { scope = "local" })
+		vim.api.nvim_set_option_value("wrapmargin", 0, { scope = "local" })
+		vim.api.nvim_set_option_value("linebreak", true, { scope = "local" })
+	end,
 })
+--Copy and paste from local
+local function paste()
+	return {
+		vim.fn.split(vim.fn.getreg(""), "\n"),
+		vim.fn.getregtype(""),
+	}
+end
+
+vim.g.clipboard = {
+	name = "OSC 52",
+	copy = {
+		["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+		["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+	},
+	paste = {
+		["+"] = paste,
+		["*"] = paste,
+	},
+}
+
+vim.opt.clipboard:append({ "unnamed", "unnamedplus" })

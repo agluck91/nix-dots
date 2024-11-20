@@ -36,7 +36,7 @@
     };
 
     shellAliases = import ./alias.nix;
-    
+
     plugins = [
       {
         name = "zsh-fzf-history-search";
@@ -70,7 +70,9 @@
         zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
         zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-        #VOLTA 
+        export SHELL="$(which zsh)"
+
+        #VOLTA
         export VOLTA_HOME="$HOME/.volta"
         export PATH="$VOLTA_HOME/bin:$PATH"
       '';

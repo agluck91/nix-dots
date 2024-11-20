@@ -36,6 +36,7 @@ in {
   programs.zsh.enable = true;
   environment.pathsToLink = ["/share/zsh"];
   environment.shells = with pkgs; [zsh];
+  programs.bash.enable = false;
   environment.variables = {
     LANG = "en_US.UTF-8";
     LC_ALL = "en_US.UTF-8";

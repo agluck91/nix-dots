@@ -6,15 +6,15 @@
   os = {
     disabled = false;
     symbols = {
-      Macos = "";
-      Ubuntu = "";
-      Windows = "";
-      Fedora = "";
-      Arch = "";
+      Macos = " ";
+      Ubuntu = " ";
+      Windows = " ";
+      Fedora = " ";
+      Arch = " ";
       Pop = " ";
       NixOS = " ";
-      CentOS = "";
-      Alpine = "";
+      CentOS = " ";
+      Alpine = " ";
     };
   };
 
