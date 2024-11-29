@@ -89,6 +89,7 @@
         nvim-surround
         todo-comments-nvim
         vim-test
+        git-conflict-nvim
 
         # CMP
         cmp-path

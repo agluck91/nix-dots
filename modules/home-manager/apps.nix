@@ -9,6 +9,7 @@
     lazydocker
     rancher
     minikube
+    act
     postman
     chatblade
     deno

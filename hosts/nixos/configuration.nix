@@ -53,6 +53,10 @@
     touchegg.enable = true;
   };
 
+  security = {
+    rtkit.enable = true;
+  };
+
   systemd = {
     services = {
       nvidia-suspend.enable = false;
@@ -60,8 +64,6 @@
       nvidia-hibernate.enable = false;
     };
   };
-
-  security.rtkit.enable = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -71,7 +73,11 @@
   programs = {
     dconf.enable = true;
     zsh.enable = true;
-    firefox.enable = true;
+    firefox = {
+      enable = true;
+      package = pkgs.firefox;
+      nativeMessagingHosts.packages = [pkgs.firefoxpwa];
+    };
     virt-manager.enable = true;
     light.enable = true;
   };
@@ -100,6 +106,7 @@
       lm_sensors
       gnumake
       lshw
+      firefoxpwa
       inputs.alejandra.defaultPackage.${pkgs.system}
     ];
     pathsToLink = ["/share/zsh"];

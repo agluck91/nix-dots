@@ -55,7 +55,7 @@
         animate_manual_resizes = true;
         animate_mouse_windowdragging = true;
         disable_hyprland_logo = true;
-        force_default_wallpaper = 0; 
+        force_default_wallpaper = 0;
       };
 
       exec-once = [
@@ -72,11 +72,11 @@
       workspace = [
         "1,monitor:HDMI-A-1,default:DP-1"
       ];
-      
+
       input.touchpad = {
-          natural_scroll = true;
-          disable_while_typing = true;
-          clickfinger_behavior = 1;
+        natural_scroll = true;
+        disable_while_typing = true;
+        clickfinger_behavior = 1;
       };
 
       gestures = {
@@ -127,19 +127,21 @@
         (floatTitle "Bluetooth Devices")
         (floatTitle "1Password")
       ];
-
-      windowrulev2 = [ 
+      windowrulev2 = [
+        "size 640 360, title:(Picture-in-Picture)"
+        "pin, title:^(Picture-in-Picture)$"
+        "move 1906 14, title:(Picture-in-Picture)"
+        "float, title:^(Picture-in-Picture)$"
         "bordersize 0, fullscreen:1"
-        "minsize 1000 650, floating:1"
         "opacity 0.88 0.88 1.0, title:(.*)$"
         "opacity 1.0, class:(google-chrome)"
+        "opacity 1.0, class:(firefox)"
       ];
 
       bindm = [
         "SHIFT_ALT, mouse:272, movewindow"
         "SHIFT_ALT, mouse:273, resizewindow"
       ];
-
 
       bind = let
         binding = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";
@@ -156,7 +158,6 @@
           (bindExec "T" terminal)
           (bindExec "A" apps)
           (bindExec "Z" hyprlock)
-
 
           "SUPER, F, togglefloating"
           "SUPER ALT, F, fullscreen"
