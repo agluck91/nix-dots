@@ -25,5 +25,6 @@
     localsend
     dconf2nix
     watchman
+    screenkey
   ];
 }

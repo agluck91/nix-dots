@@ -13,7 +13,7 @@
     ../../modules/home-manager/volta.nix
     ../../modules/home-manager/spotify.nix
     ../../modules/home-manager/apps.nix
-    ../../modules/home-manager/desktop-apps.nix
+    ../../modules/home-manager/nix-apps.nix
     ../../modules/home-manager/warp.nix
     ../../modules/home-manager/nvim.nix
     ../../modules/home-manager/hyprland.nix

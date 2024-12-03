@@ -27,6 +27,7 @@
       # # Tools --
       xclip
       wl-clipboard
+      delve
 
       # # LSP --
       nil
@@ -54,6 +55,8 @@
       prettierd
       stylua
       isort
+      golines
+      goimports-reviser
       black
       shfmt
       alejandra
@@ -90,6 +93,10 @@
         todo-comments-nvim
         vim-test
         git-conflict-nvim
+        nvim-dap
+        nvim-dap-go
+        nvim-dap-python
+        nvim-dap-ui
 
         # CMP
         cmp-path
@@ -116,10 +123,6 @@
         {
           plugin = alpha-nvim;
           config = lib.fileContents ../../config/nvim/plugins/dashboard.lua;
-        }
-        {
-          plugin = none-ls-nvim;
-          config = lib.fileContents ../../config/nvim/plugins/none-ls.lua;
         }
         {
           plugin = catppuccin-nvim;

@@ -407,6 +407,22 @@
         "type": "github"
       }
     },
+    "gopher": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1718445288,
+        "narHash": "sha256-ExB8jSmjMBuNJ8XQ8pVEaOo6moIMyNogBMHlDc0frHA=",
+        "owner": "olexsmir",
+        "repo": "gopher.nvim",
+        "rev": "f55c15ada8e02398000c04a96ef44d986cd01051",
+        "type": "github"
+      },
+      "original": {
+        "owner": "olexsmir",
+        "repo": "gopher.nvim",
+        "type": "github"
+      }
+    },
     "hercules-ci-effects": {
       "inputs": {
         "flake-parts": "flake-parts_2",
@@ -770,6 +786,7 @@
     "root": {
       "inputs": {
         "alejandra": "alejandra",
+        "gopher": "gopher",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
