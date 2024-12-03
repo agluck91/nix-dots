@@ -23,7 +23,6 @@
     nemo-with-extensions
     nautilus
     localsend
-
     dconf2nix
     watchman
   ];

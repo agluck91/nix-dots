@@ -118,6 +118,10 @@
           config = lib.fileContents ../../config/nvim/plugins/dashboard.lua;
         }
         {
+          plugin = none-ls-nvim;
+          config = lib.fileContents ../../config/nvim/plugins/none-ls.lua;
+        }
+        {
           plugin = catppuccin-nvim;
           config = lib.fileContents ../../config/nvim/plugins/catppuccin.lua;
         }
