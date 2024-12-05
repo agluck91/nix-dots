@@ -27,11 +27,11 @@
       # # Tools --
       xclip
       wl-clipboard
-      delve
 
       # # LSP --
       nil
       gopls
+      delve
       lua-language-server
       typescript-language-server
       vscode-langservers-extracted # html, css, json and eslint
@@ -53,6 +53,7 @@
 
       # # Formatters --
       prettierd
+      nodePackages.prettier
       stylua
       isort
       golines
@@ -93,10 +94,14 @@
         todo-comments-nvim
         vim-test
         git-conflict-nvim
-        nvim-dap
+
+        # Debuggers
         nvim-dap-go
         nvim-dap-python
         nvim-dap-ui
+        neodev-nvim
+        nvim-dap-virtual-text
+        nvim-nio
 
         # CMP
         cmp-path
@@ -123,6 +128,10 @@
         {
           plugin = alpha-nvim;
           config = lib.fileContents ../../config/nvim/plugins/dashboard.lua;
+        }
+        {
+          plugin = nvim-dap;
+          config = lib.fileContents ../../config/nvim/plugins/debuggers.lua;
         }
         {
           plugin = catppuccin-nvim;

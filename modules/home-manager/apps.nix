@@ -14,6 +14,7 @@
     chatblade
     deno
     go
+    delve
     poetry
     pulumi-bin
     opentofu
