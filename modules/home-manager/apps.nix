@@ -39,6 +39,7 @@
     bat
     fd
     gh
+    github-copilot-cli
     bottom
     jq
     yq
