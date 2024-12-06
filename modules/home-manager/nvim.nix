@@ -26,6 +26,7 @@
     extraPackages = with pkgs; [
       # # Tools --
       xclip
+      gotests
       wl-clipboard
 
       # # LSP --
@@ -74,6 +75,11 @@
     plugins = let
       toLuaType = builtins.map (plugin: plugin // {type = "lua";});
 
+      gopher = pkgs.vimUtils.buildVimPlugin {
+        name = "gopher";
+        src = inputs.gopher;
+      };
+
       plain = with pkgs.vimPlugins; [
         # Utils
         plenary-nvim
@@ -94,6 +100,7 @@
         todo-comments-nvim
         vim-test
         git-conflict-nvim
+        gopher
 
         # Debuggers
         nvim-dap-go
