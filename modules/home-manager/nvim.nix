@@ -87,6 +87,7 @@
         hologram-nvim
         nvim-web-devicons
         vim-tmux-navigator
+        mini-nvim
         nui-nvim
         vimux
         vim-illuminate
@@ -95,7 +96,6 @@
         nvim-comment
         nvim-autopairs
         nvim-web-devicons
-        nvim-notify
         nvim-surround
         todo-comments-nvim
         vim-test
@@ -135,6 +135,10 @@
         {
           plugin = alpha-nvim;
           config = lib.fileContents ../../config/nvim/plugins/dashboard.lua;
+        }
+        {
+          plugin = snacks-nvim;
+          config = lib.fileContents ../../config/nvim/plugins/snacks.lua;
         }
         {
           plugin = nvim-dap;
@@ -243,6 +247,7 @@
             p.tree-sitter-mermaid
             p.tree-sitter-c
             p.tree-sitter-make
+            p.tree-sitter-comment
             p.tree-sitter-rust
             p.tree-sitter-toml
             p.tree-sitter-nginx
