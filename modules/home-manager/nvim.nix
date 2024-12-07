@@ -133,10 +133,6 @@
 
       withConfig = with pkgs.vimPlugins; [
         {
-          plugin = alpha-nvim;
-          config = lib.fileContents ../../config/nvim/plugins/dashboard.lua;
-        }
-        {
           plugin = snacks-nvim;
           config = lib.fileContents ../../config/nvim/plugins/snacks.lua;
         }
