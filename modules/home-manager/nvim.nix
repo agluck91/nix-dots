@@ -95,7 +95,6 @@
         nvim-autopairs
         nvim-web-devicons
         nvim-surround
-        todo-comments-nvim
         vim-test
         git-conflict-nvim
         gopher
@@ -133,6 +132,10 @@
         {
           plugin = alpha-nvim;
           config = lib.fileContents ../../config/nvim/plugins/dashboard.lua;
+        }
+        {
+          plugin = todo-comments-nvim;
+          config = lib.fileContents ../../config/nvim/plugins/todo-comments.lua;
         }
         {
           plugin = nvim-dap;
