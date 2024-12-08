@@ -87,13 +87,11 @@
         hologram-nvim
         nvim-web-devicons
         vim-tmux-navigator
-        mini-nvim
         nui-nvim
         vimux
         vim-illuminate
         glow-nvim
         gitsigns-nvim
-        nvim-comment
         nvim-autopairs
         nvim-web-devicons
         nvim-surround
@@ -133,8 +131,8 @@
 
       withConfig = with pkgs.vimPlugins; [
         {
-          plugin = snacks-nvim;
-          config = lib.fileContents ../../config/nvim/plugins/snacks.lua;
+          plugin = alpha-nvim;
+          config = lib.fileContents ../../config/nvim/plugins/dashboard.lua;
         }
         {
           plugin = nvim-dap;
