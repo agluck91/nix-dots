@@ -140,6 +140,10 @@
           config = lib.fileContents ../../config/nvim/plugins/lsp-notify.lua;
         }
         {
+          plugin = nvim-comment;
+          config = lib.fileContents ../../config/nvim/plugins/comment.lua;
+        }
+        {
           plugin = todo-comments-nvim;
           config = lib.fileContents ../../config/nvim/plugins/todo-comments.lua;
         }
