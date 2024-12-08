@@ -95,6 +95,8 @@
         nvim-autopairs
         nvim-web-devicons
         nvim-surround
+        nvim-notify
+        nvim-lsp-notify
         vim-test
         git-conflict-nvim
         gopher
@@ -132,6 +134,10 @@
         {
           plugin = alpha-nvim;
           config = lib.fileContents ../../config/nvim/plugins/dashboard.lua;
+        }
+        {
+          plugin = nvim-lsp-notify;
+          config = lib.fileContents ../../config/nvim/plugins/lsp-notify.lua;
         }
         {
           plugin = todo-comments-nvim;
