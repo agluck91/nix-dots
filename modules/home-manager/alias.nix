@@ -1,10 +1,10 @@
 {
   #nix Aliases
-  nix-r = "sudo nixos-rebuild switch --flake ~/nix-dots#nixos";
-  nix-mr = "darwin-rebuild switch --flake ~/nix-dots#mac";
-  nix-u = "sudo flakes update";
-  nix-e = "nvim ~/nix-dots";
-  nix-g = "sudo nix collect-garbage -d 1w";
+  nr = "sudo nixos-rebuild switch --flake ~/nix-dots#nixos";
+  nmr = "darwin-rebuild switch --flake ~/nix-dots#mac";
+  nupdate = "cd $HOME/nix-dots && sudo nix flakes update";
+  ne = "cd $HOME/nix-dots && nvim ~/nix-dots";
+  ncg = "sudo nix collect-garbage -d 1w";
 
   #System Aliases
   ls = "exa --icons -gh --group-directories-first";

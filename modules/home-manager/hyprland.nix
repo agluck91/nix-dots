@@ -69,9 +69,6 @@
         "HDMI-A-1,preferred,auto,1"
         "DP-1,highrr,auto,auto"
       ];
-      workspace = [
-        "1,monitor:HDMI-A-1,default:DP-1"
-      ];
 
       input.touchpad = {
         natural_scroll = true;

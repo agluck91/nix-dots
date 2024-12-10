@@ -52,7 +52,7 @@
     nurl
 
     # fonts
-    fira-code-nerdfont
-    nerdfonts
+    nerd-fonts.fira-code
+    nerd-fonts.hack
   ];
 }
