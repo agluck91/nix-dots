@@ -14,7 +14,7 @@
   llt = "exa --icons --group-directories-first -T";
   cd = "z";
   cdi = "zi";
-  cc = "/bin/cat";
+  ccat = "/bin/cat";
   cat = "bat -p -P";
   rm = "rm -i";
   cp = "cp -i";
@@ -24,8 +24,7 @@
 
   #Misc aliases
   lg = "lazygit";
-  s = "sesh connect $(sesh list -i | gum filter --limit 1 --no-sort --fuzzy --placeholder 'Pick a sesh' --height 50
-  --prompt='⚡')";
+  s = "sesh connect $(sesh list -i | gum filter --limit 1 --no-sort --fuzzy --placeholder 'Pick a sesh' --height 50 --prompt=' ')";
 
   #Docker aliases
   drm = "docker rm -f $(docker ps -aq)";
