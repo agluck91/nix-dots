@@ -2,7 +2,7 @@
   #nix Aliases
   nr = "sudo nixos-rebuild switch --flake ~/nix-dots#nixos";
   nmr = "darwin-rebuild switch --flake ~/nix-dots#mac";
-  nupdate = "cd $HOME/nix-dots && sudo nix flakes update";
+  nupdate = "cd $HOME/nix-dots && sudo nix flake update";
   ne = "cd $HOME/nix-dots && nvim ~/nix-dots";
   ncg = "sudo nix collect-garbage -d 1w";
 
@@ -24,6 +24,8 @@
 
   #Misc aliases
   lg = "lazygit";
+  s = "sesh connect $(sesh list -i | gum filter --limit 1 --no-sort --fuzzy --placeholder 'Pick a sesh' --height 50
+  --prompt='⚡')";
 
   #Docker aliases
   drm = "docker rm -f $(docker ps -aq)";
