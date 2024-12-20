@@ -18,6 +18,7 @@
   services.mako = {
     enable = true;
     anchor = "bottom-center";
+    margin = "0, 0, 59, 0";
     padding = "24";
     defaultTimeout = 5000;
     borderRadius = 8;
@@ -32,8 +33,11 @@
     settings = let
       apps = "wofi --show drun --allow-images";
       terminal = "kitty";
-      browser = "firefox";
+      terminal2 = "warp";
+      browser = "google-chrome-stable";
       hyprlock = "hyprlock";
+      obsidian = "obsidian";
+      todoist = "todoist";
     in {
       env = [
         "BROWSER,${browser}"
@@ -155,6 +159,9 @@
           (bindExec "T" terminal)
           (bindExec "A" apps)
           (bindExec "Z" hyprlock)
+          (bindExec "O" obsidian)
+          (bindExec "D" todoist)
+          (bindExec "W" terminal2)
 
           "SUPER, F, togglefloating"
           "SUPER ALT, F, fullscreen"

@@ -42,9 +42,8 @@
     in {
       mainBar = {
         layer = "top";
-        position = "top";
-        spacing = 8;
-        margin-top = 12;
+        position = "bottom";
+        spacing = 5;
         margin-left = 12;
         margin-right = 12;
 
@@ -86,14 +85,25 @@
           tooltip-format = "Discord";
         };
 
+        "custom/sesh" = {
+          format = iconButton blue " ";
+          tooltip-format = "Open Kitty with Tmux Session Manager";
+          on-click = "kitty sesh connect $(sesh list -t | wofi --dmenu)";
+        };
+
+        "custom/sshApple" = {
+          format = iconButton blue "";
+          tooltip-format = "Connect to MacBook Pro via SSH.";
+          on-click = "kitty ssh mac";
+        };
+
         "group/quick-links" = {
           orientation = "horizontal";
           modules = [
             "custom/settings"
             "custom/nautilus"
-            "custom/chrome"
-            "custom/spotify"
             "custom/discord"
+            "custom/sshApple"
           ];
         };
 
@@ -115,8 +125,8 @@
             charging = ["󰢟" "󰢜" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂅"];
           };
           format-time = "{H}h{M}m";
-          format-charging = iconButton blue"<span font='Font Awesome 5 Free 11'>{icon}</span>";
-          format-full = iconLabel blue "<span font='Font Awesome 5 Free 11'>{icon}</span>"  "Full";
+          format-charging = iconButton blue "<span font='Font Awesome 5 Free 11'>{icon}</span>";
+          format-full = iconLabel blue "<span font='Font Awesome 5 Free 11'>{icon}</span>" "Full";
           format-warning = iconButton yellow "<span font='Font Awesome 5 Free 11'>{icon}</span>";
           format-critical = iconButton red "<span font='Font Awesome 5 Free 11'>{icon}</span>";
           format-omgosh = iconLabel red "" "Charge Now!";
@@ -127,8 +137,7 @@
             omgosh = 10;
           };
           tooltip = true;
-
-	      };
+        };
 
         "group/stats" = {
           orientation = "horizontal";
@@ -163,7 +172,7 @@
           modules = [
             "custom/ssmonitor"
             "custom/sswindow"
-            "custom/ssregion" 
+            "custom/ssregion"
           ];
         };
 

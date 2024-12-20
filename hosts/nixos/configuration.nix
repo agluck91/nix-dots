@@ -43,11 +43,15 @@
         '';
       };
     };
-    logind.extraConfig = ''
-      # don’t shutdown when power button is short-pressed
-      HandleLidSwitchDocked=ignore
-    '';
-    printing.enable = true;
+    printing = {
+      enable = true;
+      drivers = [pkgs.hplipWithPlugin];
+    };
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
     openssh.enable = true;
     tailscale.enable = true;
     touchegg.enable = true;
@@ -114,6 +118,9 @@
     sessionVariables = {
       EDITOR = "nvim";
       TERMINAL = "kitty";
+    };
+    etc = {
+      "resolv.conf".text = "nameserver 10.10.1.1\nnameserver 10.10.1.234\nnameserver 1.1.1.1\n";
     };
   };
 

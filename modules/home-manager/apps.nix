@@ -9,9 +9,7 @@
     lazydocker
     rancher
     minikube
-    act
     postman
-    chatblade
     deno
     go
     delve
@@ -24,7 +22,6 @@
     # terminal
     ripgrep
     dust
-    bandwhich
     nushell
     hyperfine
     cheat
@@ -33,6 +30,7 @@
     sesh
     gum
     mosh
+    fabric-ai
     unimatrix
     asciiquarium-transparent
     pipes

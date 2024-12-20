@@ -5,7 +5,6 @@
     dbeaver-bin
     pamixer
     google-chrome
-    chromium
     kooha
     x264
     chatgpt-cli
@@ -18,18 +17,15 @@
     obs-studio
     obs-studio-plugins.obs-backgroundremoval
     openshot-qt
-    ardour
     audacity
     xiphos
     zoom-us
     remmina
     popsicle
     trayscale
-    nemo-with-extensions
     nautilus
     localsend
     dconf2nix
     watchman
-    screenkey
   ];
 }

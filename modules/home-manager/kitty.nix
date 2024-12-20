@@ -12,6 +12,8 @@
       italic_font = "FiraCode Nerd Font Italic";
       bold_italic_font = "FiraCode Nerd Font Bold Italic";
 
+      cursor_trail = 3;
+
       window_padding_width = 4;
       wayland_titlebar_color = "background";
       enabled_layouts = "fat, tall, vertical";

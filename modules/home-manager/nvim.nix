@@ -99,7 +99,9 @@
         nvim-lsp-notify
         vim-test
         git-conflict-nvim
+        undotree
         gopher
+        vim-astro
 
         # Debuggers
         nvim-dap-go
@@ -236,6 +238,7 @@
             p.tree-sitter-vue
             p.tree-sitter-tsx
             p.tree-sitter-yaml
+            p.tree-sitter-astro
             p.tree-sitter-html
             p.tree-sitter-go
             p.tree-sitter-gomod
