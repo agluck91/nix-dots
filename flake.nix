@@ -12,6 +12,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
+
     # Sylix - system wide styles
     stylix = {
       url = "github:danth/stylix";
@@ -52,6 +56,7 @@
   outputs = {
     nixpkgs,
     nixpkgs-stable,
+    ghostty,
     stylix,
     home-manager,
     nix-darwin,

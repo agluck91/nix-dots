@@ -38,6 +38,7 @@
     fd
     gh
     github-copilot-cli
+    gcalcli
     bottom
     jq
     yq
