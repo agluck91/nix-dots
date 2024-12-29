@@ -111,6 +111,7 @@
       gnumake
       lshw
       firefoxpwa
+      inputs.ghostty.packages.x86_64-linux.default
       inputs.alejandra.defaultPackage.${pkgs.system}
     ];
     pathsToLink = ["/share/zsh"];

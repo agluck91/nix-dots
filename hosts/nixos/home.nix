@@ -19,7 +19,6 @@
     ../../modules/home-manager/hyprland.nix
     ../../modules/home-manager/wofi.nix
     ../../modules/home-manager/waybar.nix
-    ../../modules/home-manager/ghostty.nix
   ];
 
   home = {
