@@ -32,7 +32,7 @@
 
     settings = let
       apps = "wofi --show drun --allow-images";
-      terminal = "kitty";
+      terminal = "ghostty";
       terminal2 = "warp";
       browser = "google-chrome-stable";
       hyprlock = "hyprlock";
