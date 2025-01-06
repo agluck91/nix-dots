@@ -57,7 +57,6 @@
       nodePackages.prettier
       stylua
       isort
-      golines
       goimports-reviser
       black
       shfmt
@@ -74,11 +73,6 @@
 
     plugins = let
       toLuaType = builtins.map (plugin: plugin // {type = "lua";});
-
-      gopher = pkgs.vimUtils.buildVimPlugin {
-        name = "gopher";
-        src = inputs.gopher;
-      };
 
       plain = with pkgs.vimPlugins; [
         # Utils
@@ -100,7 +94,6 @@
         vim-test
         git-conflict-nvim
         undotree
-        gopher
         vim-astro
 
         # Debuggers
