@@ -12,7 +12,7 @@ conform.setup({
 		json = { "prettier" },
 		yaml = { "prettier" },
 		rust = { "rustfmt" },
-		go = { "gofmt", "goimports-reviser", "golines" },
+		go = { "gofmt", "goimports-reviser" },
 		markdown = { "prettier" },
 		graphql = { "prettier" },
 		liquid = { "prettier" },
