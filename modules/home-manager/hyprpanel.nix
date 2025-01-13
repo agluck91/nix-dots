@@ -7,6 +7,8 @@
     # Default: false
     enable = true;
 
+    overlay.enable = true;
+
     # Automatically restart HyprPanel with systemd.
     # Useful when updating your config so that you
     # don't need to manually restart it.
@@ -25,14 +27,14 @@
 
     # Import a theme from './themes/*.json'.
     # Default: ""
-    theme = "gruvbox_split";
+    theme = "catppucin_mocha";
 
     # Override the final config with an arbitrary set.
     # Useful for overriding colors in your selected theme.
     # Default: {}
-    override = {
-      theme.bar.menus.text = "#123ABC";
-    };
+    # override = {
+    #   theme.bar.menus.text = "#123ABC";
+    # };
 
     # Configure bar layouts for monitors.
     # See 'https://hyprpanel.com/configuration/panel.html'.
