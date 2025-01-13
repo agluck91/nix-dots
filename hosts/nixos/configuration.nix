@@ -111,7 +111,7 @@
       gnumake
       lshw
       firefoxpwa
-      inputs.ghostty.packages.x86_64-linux.default
+      hyprland
       inputs.alejandra.defaultPackage.${pkgs.system}
     ];
     pathsToLink = ["/share/zsh"];
@@ -125,8 +125,8 @@
     };
   };
 
+  hardware.keyboard.zsa.enable = true;
   hardware.acpilight.enable = true;
-
   hardware.graphics = {
     enable = true;
   };

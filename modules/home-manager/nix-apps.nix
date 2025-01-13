@@ -1,28 +1,23 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    keymapp
     slack
+    ghostty
     vesktop
     dbeaver-bin
-    pamixer
     google-chrome
     kooha
     x264
-    chatgpt-cli
     todoist
     todoist-electron
     teams-for-linux
     obsidian
     _1password-gui
-    _1password-cli
     obs-studio
     obs-studio-plugins.obs-backgroundremoval
-    openshot-qt
     audacity
-    xiphos
     zoom-us
-    remmina
     popsicle
-    trayscale
     nautilus
     localsend
     dconf2nix

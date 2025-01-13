@@ -19,18 +19,5 @@
   home.packages = with pkgs; [
     dconf-editor
     gnome-tweaks
-    caffeine-ng
-    gnomeExtensions.freon
-    gnomeExtensions.x11-gestures
-    gnomeExtensions.tiling-shell
-    gnomeExtensions.system-monitor
-    gnomeExtensions.workspace-indicator
-    gnomeExtensions.auto-move-windows
-    gnomeExtensions.caffeine
-    gnomeExtensions.bluetooth-quick-connect
-    gnomeExtensions.clipboard-indicator
-    gnomeExtensions.sound-output-device-chooser
-    gnomeExtensions.systemd-manager
-    gnomeExtensions.tailscale-status
   ];
 }

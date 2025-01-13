@@ -2,29 +2,21 @@
   home.packages = with pkgs; [
     #dev
     postgresql
-    rustup
     kubernetes-helm
     kubectl
     k9s
     lazydocker
-    rancher
     minikube
     postman
-    deno
     go
     delve
-    poetry
-    pulumi-bin
-    opentofu
     ansible
     typescript
 
     # terminal
     ripgrep
     dust
-    nushell
-    hyperfine
-    cheat
+    dig
     speedtest-cli
     awscli2
     sesh
@@ -41,14 +33,12 @@
     gcalcli
     bottom
     jq
-    yq
     eza
     tealdeer
     btop
     lazygit
     neofetch
     python3
-    nurl
 
     # fonts
     nerd-fonts.fira-code

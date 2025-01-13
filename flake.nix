@@ -6,14 +6,15 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/release-24.05";
 
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
     };
 
     # Sylix - system wide styles
@@ -25,12 +26,6 @@
     # alejandra nix formatter
     alejandra = {
       url = "github:kamadorueda/alejandra/3.0.0";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Hyprland
-    hyprland = {
-      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -52,10 +47,10 @@
   outputs = {
     nixpkgs,
     nixpkgs-stable,
-    ghostty,
     stylix,
     home-manager,
     nix-darwin,
+    hyprpanel,
     ...
   } @ inputs: {
     darwinConfigurations."mac" = nix-darwin.lib.darwinSystem rec {

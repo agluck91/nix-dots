@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   lib,
   ...
@@ -28,7 +27,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    package = pkgs.hyprland;
 
     settings = let
       apps = "wofi --show drun --allow-images";
@@ -83,7 +82,6 @@
       gestures = {
         workspace_swipe = true;
         workspace_swipe_fingers = 3;
-        workspace_swipe_forever = true;
       };
 
       general = {

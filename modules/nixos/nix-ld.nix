@@ -5,7 +5,6 @@
   # here, NOT in environment.systemPackages
   programs.nix-ld.libraries = with pkgs; [
     volta
-    deno
     alsa-lib
     at-spi2-atk
     at-spi2-core

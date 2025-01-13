@@ -1,7 +1,4 @@
 {pkgs, ...}: {
-  hardware.cpu.amd.updateMicrocode = true;
-  hardware.amdgpu.initrd.enable = true;
-
   programs.steam.enable = true;
   programs.gamemode.enable = true;
 

@@ -46,5 +46,5 @@
   ];
 
   # PipeWire requires this to be false
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 }
