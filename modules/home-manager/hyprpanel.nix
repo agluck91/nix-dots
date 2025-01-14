@@ -1,13 +1,12 @@
-# *.nix
 {inputs, ...}: {
   imports = [inputs.hyprpanel.homeManagerModules.hyprpanel];
 
   programs.hyprpanel = {
+    overlay.enable = true;
+
     # Enable the module.
     # Default: false
     enable = true;
-
-    overlay.enable = true;
 
     # Automatically restart HyprPanel with systemd.
     # Useful when updating your config so that you
@@ -27,7 +26,7 @@
 
     # Import a theme from './themes/*.json'.
     # Default: ""
-    theme = "catppucin_mocha";
+    theme = "catppuccin_mocha";
 
     # Override the final config with an arbitrary set.
     # Useful for overriding colors in your selected theme.
@@ -44,7 +43,7 @@
         "0" = {
           left = ["dashboard" "workspaces"];
           middle = ["media"];
-          right = ["volume" "systray" "notifications"];
+          right = ["volume" "notifications"];
         };
       };
     };
@@ -60,13 +59,13 @@
 
       menus.clock = {
         time = {
-          military = true;
+          military = false;
           hideSeconds = true;
         };
         weather.unit = "metric";
       };
 
-      menus.dashboard.directories.enabled = false;
+      menus.dashboard.directories.enabled = true;
       menus.dashboard.stats.enable_gpu = true;
 
       theme.bar.transparent = true;

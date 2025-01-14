@@ -7,6 +7,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    ../../overlays
     ../../modules/nixos/nix-ld.nix
     ../../modules/nixos/timezone.nix
     ../../modules/nixos/pipewire.nix

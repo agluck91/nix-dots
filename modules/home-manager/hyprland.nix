@@ -14,16 +14,6 @@
 
   programs.mpv.enable = true;
 
-  services.mako = {
-    enable = true;
-    anchor = "bottom-center";
-    margin = "0, 0, 59, 0";
-    padding = "24";
-    defaultTimeout = 5000;
-    borderRadius = 8;
-    borderSize = 2;
-  };
-
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
@@ -59,10 +49,11 @@
         animate_mouse_windowdragging = true;
         disable_hyprland_logo = true;
         force_default_wallpaper = 0;
+        focus_on_activate = true;
       };
 
       exec-once = [
-        "${pkgs.waybar}/bin/waybar"
+        "hyprpanel"
         "hyprdim --no-dim-when-only --persist --ignore-leaving-special --dialog-dim"
         "blueman-tray"
         "bash /home/agluck/sd"
