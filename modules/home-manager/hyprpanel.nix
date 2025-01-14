@@ -34,9 +34,13 @@
       menus.dashboard.stats.enable_gpu = true;
 
       theme.bar.transparent = true;
+      theme.bar.location = "bottom";
+      theme.bar.buttons.enableBorders = true;
+      theme.bar.buttons.borderSize = "0.02em";
+      theme.bar.buttons.radius = "1em";
 
       theme.font = {
-        name = "CaskaydiaCove NF";
+        name = "Fira Code Nerd Font";
         size = "16px";
       };
     };
