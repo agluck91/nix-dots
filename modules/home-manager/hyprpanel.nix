@@ -13,7 +13,7 @@
         "*" = {
           left = ["dashboard" "media" "windowtitle"];
           middle = ["workspaces"];
-          right = ["volume" "network" "bluetooth" "clock" "notifications"];
+          right = ["volume" "network" "bluetooth" "clock" "notifications" "power"];
         };
       };
     };
@@ -21,6 +21,8 @@
     settings = {
       bar.launcher.autoDetectIcon = true;
       bar.workspaces.show_icons = true;
+      bar.notifications.show_total = true;
+      bar.notifications.hideCountWhenZero = true;
 
       menus.clock = {
         time = {
@@ -38,6 +40,8 @@
       theme.bar.buttons.enableBorders = true;
       theme.bar.buttons.borderSize = "0.02em";
       theme.bar.buttons.radius = "1em";
+
+      notifications.position = "bottom";
 
       theme.font = {
         name = "Fira Code Nerd Font";
