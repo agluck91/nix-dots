@@ -23,6 +23,16 @@
       bar.workspaces.show_icons = true;
       bar.notifications.show_total = true;
       bar.notifications.hideCountWhenZero = true;
+      bar.workspaces.showWsIcons = true;
+      bar.workspaces.workspaceIconMap = ''
+        {
+          "1": " ",
+          "2": " ",
+          "3":  " ",
+          "4":  "󰙯 ",
+          "5":  "󱄅 ",
+        }
+      '';
 
       menus.clock = {
         time = {
