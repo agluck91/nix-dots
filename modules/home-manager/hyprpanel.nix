@@ -58,7 +58,7 @@
           military = false;
           hideSeconds = true;
         };
-        weather.unit = "metric";
+        weather.enabled = false;
       };
       menus.dashboard.directories.enabled = false;
       menus.dashboard.stats.enable_gpu = true;
