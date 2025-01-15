@@ -13,7 +13,7 @@
         "*" = {
           left = ["dashboard" "workspaces" "media"];
           middle = ["windowtitle" "clock" "notifications"];
-          right = ["bluetooth" "network" "volume" "battery" "clock" "power"];
+          right = ["bluetooth" "network" "volume" "battery" "power"];
         };
       };
     };
