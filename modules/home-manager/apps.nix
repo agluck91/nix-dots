@@ -23,6 +23,7 @@
     gum
     mosh
     fabric-ai
+    cava
     unimatrix
     asciiquarium-transparent
     pipes
