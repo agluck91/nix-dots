@@ -6,7 +6,7 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/release-24.05";
 
     hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
+      url = "github:agluck91/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

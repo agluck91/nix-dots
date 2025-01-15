@@ -5,34 +5,42 @@
     enable = true;
     systemd.enable = true;
     overwrite.enable = true;
+    hyprland.enable = true;
 
     theme = "catppuccin_mocha";
 
     layout = {
       "bar.layouts" = {
         "*" = {
-          left = ["dashboard" "media" "windowtitle"];
-          middle = ["workspaces"];
-          right = ["volume" "network" "bluetooth" "clock" "notifications" "power"];
+          left = ["dashboard" "windowtitle"];
+          middle = ["media" "workspaces" "notifications"];
+          right = ["bluetooth" "network" "volume" "battery" "clock" "power"];
         };
       };
     };
 
+    override = {
+    };
+
     settings = {
       bar.launcher.autoDetectIcon = true;
-      bar.workspaces.show_icons = true;
+      bar.workspaces.show_icons = false;
       bar.notifications.show_total = true;
       bar.notifications.hideCountWhenZero = true;
       bar.workspaces.showWsIcons = true;
-      bar.workspaces.workspaceIconMap = ''
-        {
-          "1": " ",
-          "2": " ",
-          "3":  " ",
-          "4":  "󰙯 ",
-          "5":  "󱄅 ",
-        }
-      '';
+      bar.bluetooth.label = false;
+      bar.network.label = false;
+      bar.workspaces.workspaceIconMap = {
+        "1" = "";
+        "2" = "󰊠";
+        "3" = "";
+        "4" = "󰍡";
+        "5" = "󱄅";
+        "6" = "";
+        "7" = "";
+        "8" = "";
+        "9" = "";
+      };
 
       menus.clock = {
         time = {
