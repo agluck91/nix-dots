@@ -11,8 +11,8 @@
     layout = {
       "bar.layouts" = {
         "*" = {
-          left = ["dashboard" "workspaces" "windowtitle"];
-          middle = ["media" "notifications"];
+          left = ["dashboard" "workspaces" "media"];
+          middle = ["windowtitle" "clock" "notifications"];
           right = ["bluetooth" "network" "volume" "battery" "clock" "power"];
         };
       };
