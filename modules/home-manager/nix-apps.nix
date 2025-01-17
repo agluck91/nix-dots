@@ -5,6 +5,7 @@
     ghostty
     vesktop
     dbeaver-bin
+    cider-2
     google-chrome
     kooha
     x264

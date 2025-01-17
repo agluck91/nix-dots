@@ -55,12 +55,12 @@
       # # Formatters --
       prettierd
       nodePackages.prettier
+      alejandra
       stylua
       isort
       goimports-reviser
       black
       shfmt
-      alejandra
       rustfmt
 
       # # Linters --

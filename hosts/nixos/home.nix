@@ -11,14 +11,11 @@
     ../../modules/home-manager/gnome.nix
     ../../modules/home-manager/dconf.nix
     ../../modules/home-manager/volta.nix
-    ../../modules/home-manager/spotify.nix
     ../../modules/home-manager/apps.nix
     ../../modules/home-manager/nix-apps.nix
-    ../../modules/home-manager/warp.nix
     ../../modules/home-manager/nvim.nix
     ../../modules/home-manager/hyprland.nix
     ../../modules/home-manager/wofi.nix
-    ../../modules/home-manager/waybar.nix
     ../../modules/home-manager/hyprpanel.nix
   ];
 

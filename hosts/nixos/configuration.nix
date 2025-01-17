@@ -113,13 +113,12 @@
       lshw
       firefoxpwa
       hyprland
-      inputs.alejandra.defaultPackage.${pkgs.system}
     ];
     pathsToLink = ["/share/zsh"];
     shells = with pkgs; [zsh];
     sessionVariables = {
       EDITOR = "nvim";
-      TERMINAL = "kitty";
+      TERMINAL = "ghostty";
     };
     etc = {
       "resolv.conf".text = "nameserver 10.10.1.1\nnameserver 10.10.1.234\nnameserver 1.1.1.1\n";
