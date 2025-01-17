@@ -3,7 +3,7 @@ import sys
 
 
 def list_ssh_tunnels():
-    """List all SSH tunnel processes (those with the '-D' flag)."""
+    """List all SSH tunnel processes (those with the '-D' flag), excluding sshd services."""
     try:
         # Get the list of all SSH processes with their details
         result = subprocess.run(
@@ -12,8 +12,8 @@ def list_ssh_tunnels():
         ssh_tunnels = []
 
         for line in result.stdout.decode().splitlines():
-            # Look for SSH processes with the '-D' flag (SOCKS5 proxy)
-            if "ssh" in line and "-D" in line:
+            # Look for SSH processes with the '-D' flag (SOCKS5 proxy), but exclude 'sshd'
+            if "ssh" in line and "-D" in line and "sshd" not in line:
                 ssh_tunnels.append(line)
 
         if ssh_tunnels:
