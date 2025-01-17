@@ -19,12 +19,11 @@
     username = "agluck";
     homeDirectory = "/home/agluck";
     stateVersion = "24.05";
+    #User helper scripts
+    packages = [
+      (pkgs.helpers.pyScript "start-proxy")
+    ];
   };
-
-  #User helper scripts
-  packages = [
-    (pkgs.helpers.pyScript "start-proxy")
-  ];
 
   xdg.mimeApps = {
     enable = true;
