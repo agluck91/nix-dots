@@ -1,5 +1,5 @@
 {pkgs, ...}: {
   home.packages = [
-    (pkgs.helpers.pyScript "hello")
+    (pkgs.helpers.pyScript "tmux-os-icon")
   ];
 }

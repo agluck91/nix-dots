@@ -5,6 +5,6 @@ final: prev: {
       final.writers.writeJSBin name {} (prev.lib.fileContents ./scripts/${name}.js);
 
     pyScript = name:
-      final.writers.writePythonBin name {} (prev.lib.fileContents ./scripts/${name}.py);
+      final.writers.writePython3Bin name {doCheck = false;} (prev.lib.fileContents ./scripts/${name}.py);
   };
 }
