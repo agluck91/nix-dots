@@ -39,32 +39,38 @@ def kill_ssh_tunnel(tunnel_pid):
 
 
 def main():
-    ssh_tunnels = list_ssh_tunnels()
+    while True:
+        ssh_tunnels = list_ssh_tunnels()
 
-    if not ssh_tunnels:
-        sys.exit(0)
+        if not ssh_tunnels:
+            sys.exit(0)
 
-    # Ask user if they want to kill one or all tunnels
-    choice = (
-        input("\nEnter the number of the tunnel to kill, or 'all' to kill all: ")
-        .strip()
-        .lower()
-    )
+        # Ask user if they want to kill one or all tunnels or exit
+        choice = (
+            input(
+                "\nEnter the number of the tunnel to kill, 'all' to kill all, or 'exit' to quit: "
+            )
+            .strip()
+            .lower()
+        )
 
-    if choice == "all":
-        for tunnel in ssh_tunnels:
+        if choice == "exit":
+            print("Exiting the script.")
+            sys.exit(0)
+        elif choice == "all":
+            for tunnel in ssh_tunnels:
+                pid = int(
+                    tunnel.split()[1]
+                )  # PID is the second column in the output of 'ps aux'
+                kill_ssh_tunnel(pid)
+        elif choice.isdigit() and 1 <= int(choice) <= len(ssh_tunnels):
+            tunnel = ssh_tunnels[int(choice) - 1]
             pid = int(
                 tunnel.split()[1]
             )  # PID is the second column in the output of 'ps aux'
             kill_ssh_tunnel(pid)
-    elif choice.isdigit() and 1 <= int(choice) <= len(ssh_tunnels):
-        tunnel = ssh_tunnels[int(choice) - 1]
-        pid = int(
-            tunnel.split()[1]
-        )  # PID is the second column in the output of 'ps aux'
-        kill_ssh_tunnel(pid)
-    else:
-        print("Invalid choice. Exiting.")
+        else:
+            print("Invalid choice. Please try again.")
 
 
 if __name__ == "__main__":
