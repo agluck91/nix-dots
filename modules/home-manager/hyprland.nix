@@ -12,6 +12,10 @@
     terminal = false;
   };
 
+  home.packages = [
+    (pkgs.helpers.pyScript "switch-display")
+  ];
+
   programs.mpv.enable = true;
 
   wayland.windowManager.hyprland = {
@@ -55,7 +59,7 @@
         "hyprpanel"
         "hyprdim --no-dim-when-only --persist --ignore-leaving-special --dialog-dim"
         "blueman-tray"
-        "bash /home/agluck/sd"
+        "switch-display"
       ];
 
       monitor = [
