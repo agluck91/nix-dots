@@ -1,8 +1,4 @@
-{
-  inputs,
-  lib,
-  ...
-}: {
+{...}: {
   imports = [
     ../../modules/home-manager/kitty.nix
     ../../modules/home-manager/git.nix
@@ -17,6 +13,7 @@
     ../../modules/home-manager/hyprland.nix
     ../../modules/home-manager/wofi.nix
     ../../modules/home-manager/hyprpanel.nix
+    ../../modules/home-manager/fuzzle.nix
   ];
 
   home = {

@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }: {
   xdg.desktopEntries."org.gnome.Settings" = {
@@ -20,9 +21,8 @@
     package = pkgs.hyprland;
 
     settings = let
-      apps = "wofi --show drun --allow-images";
+      apps = "fuzzel --cache ${config.home.homeDirectory}/.config/fuzzel/cache";
       terminal = "ghostty";
-      terminal2 = "warp";
       browser = "google-chrome-stable";
       hyprlock = "hyprlock";
       obsidian = "obsidian";
@@ -150,7 +150,6 @@
           (bindExec "Z" hyprlock)
           (bindExec "O" obsidian)
           (bindExec "D" todoist)
-          (bindExec "W" terminal2)
 
           "SUPER, F, togglefloating"
           "SUPER ALT, F, fullscreen"
