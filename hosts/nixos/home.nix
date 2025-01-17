@@ -22,6 +22,7 @@
     #User helper scripts
     packages = [
       (pkgs.helpers.pyScript "start-proxy")
+      (pkgs.helpers.pyScript "kill-proxy")
     ];
   };
 
