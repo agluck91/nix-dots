@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  config,
   ...
 }: {
   xdg.desktopEntries."org.gnome.Settings" = {
@@ -21,7 +20,7 @@
     package = pkgs.hyprland;
 
     settings = let
-      apps = "fuzzel --cache ${config.home.homeDirectory}/.config/fuzzel/cache";
+      apps = "wofi --show drun --allow-images";
       terminal = "ghostty";
       browser = "google-chrome-stable";
       hyprlock = "hyprlock";
