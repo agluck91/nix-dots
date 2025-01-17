@@ -3,5 +3,8 @@ final: prev: {
   helpers = {
     nodeJsScript = name:
       final.writers.writeJSBin name {} (prev.lib.fileContents ./scripts/${name}.js);
+
+    pyScript = name:
+      final.writers.writePythonBin name {} (prev.lib.fileContents ./scripts/${name}.py);
   };
 }
