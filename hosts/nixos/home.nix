@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     ../../modules/home-manager/kitty.nix
     ../../modules/home-manager/git.nix
@@ -20,6 +20,11 @@
     homeDirectory = "/home/agluck";
     stateVersion = "24.05";
   };
+
+  #User helper scripts
+  packages = [
+    (pkgs.helpers.pyScript "start-proxy")
+  ];
 
   xdg.mimeApps = {
     enable = true;
