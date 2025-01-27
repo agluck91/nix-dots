@@ -6,6 +6,7 @@
     vesktop
     dbeaver-bin
     cider-2
+    gimp
     google-chrome
     kooha
     x264

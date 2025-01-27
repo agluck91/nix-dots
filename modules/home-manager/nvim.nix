@@ -95,6 +95,7 @@
         git-conflict-nvim
         undotree
         vim-astro
+        hologram-nvim
 
         # Debuggers
         nvim-dap-go
