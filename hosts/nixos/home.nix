@@ -12,7 +12,6 @@
     ../../modules/home-manager/nvim.nix
     ../../modules/home-manager/hyprland.nix
     ../../modules/home-manager/wofi.nix
-    ../../modules/home-manager/virtualization.nix
     ../../modules/home-manager/hyprpanel.nix
   ];
 

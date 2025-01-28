@@ -72,6 +72,26 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  virtualisation = {
+    containers = {
+      enable = true;
+    };
+
+    podman = {
+      enable = true;
+      dockerCompat = false; #alias podman to docker
+      defaultNetwork.settings.dns_enabled = true;
+    };
+
+    docker = {
+      enable = true;
+    };
+
+    libvirtd = {
+      enable = true;
+    };
+  };
+
   programs = {
     dconf.enable = true;
     zsh.enable = true;
@@ -80,6 +100,7 @@
       package = pkgs.firefox;
       nativeMessagingHosts.packages = [pkgs.firefoxpwa];
     };
+    virt-manager.enable = true;
     light.enable = true;
   };
 
@@ -105,6 +126,9 @@
       unzip
       cmake
       lm_sensors
+      dive
+      podman-tui
+      podman-compose
       gnumake
       lshw
       firefoxpwa
