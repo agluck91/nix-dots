@@ -72,9 +72,6 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  virtualisation.libvirtd.enable = true;
-  virtualisation.docker.enable = true;
-
   programs = {
     dconf.enable = true;
     zsh.enable = true;
@@ -83,7 +80,6 @@
       package = pkgs.firefox;
       nativeMessagingHosts.packages = [pkgs.firefoxpwa];
     };
-    virt-manager.enable = true;
     light.enable = true;
   };
 
