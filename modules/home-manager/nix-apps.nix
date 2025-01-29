@@ -16,8 +16,6 @@
     teams-for-linux
     obsidian
     _1password-gui
-    obs-studio
-    obs-studio-plugins.obs-backgroundremoval
     audacity
     zoom-us
     popsicle
