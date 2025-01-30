@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   gtk.cursorTheme = {
-    name = "banana";
-    path = pkgs.banana-cursor;
+    name = "banana-cursor";
+    package = pkgs.banana-cursor;
     size = 96;
   };
 }

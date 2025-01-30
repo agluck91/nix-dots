@@ -13,7 +13,6 @@
     ../../modules/home-manager/hyprland.nix
     ../../modules/home-manager/wofi.nix
     ../../modules/home-manager/hyprpanel.nix
-    ../../modules/home-manager/banana.nix
   ];
 
   home = {
@@ -25,6 +24,13 @@
       (pkgs.helpers.pyScript "start-proxy")
       (pkgs.helpers.pyScript "kill-proxy")
     ];
+    pointerCursor = {
+      x11.enable = true;
+      gtk.enable = true;
+      package = pkgs.banana-cursor-dreams;
+      size = 96;
+      name = "Banana-Catppuccin-Mocha"; # Change to whatever theme you like
+    };
   };
 
   xdg.mimeApps = {

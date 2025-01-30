@@ -27,6 +27,7 @@
   };
 
   outputs = {
+    self,
     nixpkgs,
     nixpkgs-stable,
     stylix,
@@ -34,7 +35,27 @@
     nix-darwin,
     hyprpanel,
     ...
-  } @ inputs: {
+  } @ inputs: let
+    # Supported systems
+    systems = ["aarch64-darwin" "x86_64-linux"];
+
+    # Helper to generate system-specific attributes
+    forAllSystems = f:
+      nixpkgs.lib.genAttrs systems (system:
+        f {
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        });
+  in {
+    packages = forAllSystems (
+      {pkgs}: let
+        customPackages = import ./pkgs {inherit pkgs;};
+      in
+        customPackages
+    );
+
     darwinConfigurations."mac" = nix-darwin.lib.darwinSystem rec {
       system = "aarch64-darwin";
 
