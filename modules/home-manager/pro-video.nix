@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     cameractrls
+    cameractrls-gtk4
   ];
   programs.obs-studio = {
     enable = true;
