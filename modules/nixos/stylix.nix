@@ -15,6 +15,12 @@ in {
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     polarity = "dark";
 
+    cursor = {
+      package = pkgs.banana-cursor-dreams;
+      size = 96;
+      name = "Banana-Catppuccin-Mocha";
+    };
+
     fonts = {
       serif = firaSans;
       sansSerif = firaSans;

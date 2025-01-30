@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     ../../modules/home-manager/kitty.nix
     ../../modules/home-manager/git.nix
@@ -24,13 +28,6 @@
       (pkgs.helpers.pyScript "start-proxy")
       (pkgs.helpers.pyScript "kill-proxy")
     ];
-    pointerCursor = {
-      x11.enable = true;
-      gtk.enable = true;
-      package = pkgs.banana-cursor-dreams;
-      size = 96;
-      name = "Banana-Catppuccin-Mocha"; # Change to whatever theme you like
-    };
   };
 
   xdg.mimeApps = {
