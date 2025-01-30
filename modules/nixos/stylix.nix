@@ -17,7 +17,7 @@ in {
 
     cursor = {
       package = pkgs.banana-cursor-dreams;
-      size = 96;
+      size = 64;
       name = "Banana-Catppuccin-Mocha";
     };
 
