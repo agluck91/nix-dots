@@ -27,7 +27,6 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     nixpkgs-stable,
     stylix,
@@ -36,12 +35,14 @@
     hyprpanel,
     ...
   } @ inputs: let
-    # Supported systems
-    systems = ["aarch64-darwin" "x86_64-linux"];
-
-    forAllSystems = fn: nixpkgs.lib.genAttrs systems (system: fn {pkgs = import nixpkgs {inherit system;};});
+    systems = ["x86_64-linux" "aarch64-linux"];
+    forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
-    packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+    packages = forAllSystems (system: {
+      banana-cursor-dreams = import ./pkgs/banana-cursor-dreams/default.nix {
+        pkgs = nixpkgs.legacyPackages.${system};
+      };
+    });
 
     darwinConfigurations."mac" = nix-darwin.lib.darwinSystem rec {
       system = "aarch64-darwin";
