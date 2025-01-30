@@ -39,22 +39,9 @@
     # Supported systems
     systems = ["aarch64-darwin" "x86_64-linux"];
 
-    # Helper to generate system-specific attributes
-    forAllSystems = f:
-      nixpkgs.lib.genAttrs systems (system:
-        f {
-          pkgs = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
-        });
+    forAllSystems = fn: nixpkgs.lib.genAttrs systems (system: fn {pkgs = import nixpkgs {inherit system;};});
   in {
-    packages = forAllSystems (
-      {pkgs}: let
-        customPackages = import ./pkgs {inherit pkgs;};
-      in
-        customPackages
-    );
+    packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
 
     darwinConfigurations."mac" = nix-darwin.lib.darwinSystem rec {
       system = "aarch64-darwin";

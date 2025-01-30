@@ -15,12 +15,6 @@ in {
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     polarity = "dark";
 
-    cursor = {
-      name = "capitaine-cursors";
-      package = pkgs.capitaine-cursors;
-      size = 38;
-    };
-
     fonts = {
       serif = firaSans;
       sansSerif = firaSans;
