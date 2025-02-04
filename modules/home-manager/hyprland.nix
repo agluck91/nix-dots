@@ -34,12 +34,12 @@
       env = [
         "BROWSER,${browser}"
         "XDG_CURRENT_DESKTOP,Hyprland"
-        "HYPRCURSOR_THEME,capitaine-cursors"
-        "HYPRCURSOR_SIZE,38"
-        "XCURSOR_THEME,capitaine-cursors"
-        "XCURSOR_SIZE,38"
-        "QT_CURSOR_THEME,capitaine-cursors"
-        "QT_CURSOR_SIZE,38"
+        "HYPRCURSOR_THEME,Banana-Catppuccin-Mocha"
+        "HYPRCURSOR_SIZE,56"
+        "XCURSOR_THEME,Banana-Catppuccin-Mocha"
+        "XCURSOR_SIZE,56"
+        "QT_CURSOR_THEME,Banana-Catppuccin-Mocha"
+        "QT_CURSOR_SIZE,56"
       ];
 
       cursor = {
@@ -58,6 +58,7 @@
       exec-once = [
         "hyprpanel"
         "hyprdim --no-dim-when-only --persist --ignore-leaving-special --dialog-dim"
+        "hyprctl setcursor Banana-Catppuccin-Mocha 56"
         "blueman-tray"
         "switch-display"
       ];
@@ -129,6 +130,7 @@
         "opacity 0.88 0.88 1.0, title:(.*)$"
         "opacity 1.0, class:(google-chrome)"
         "opacity 1.0, class:(firefox)"
+        "opacity 1.0, class:(com.obsproject.Studio)"
       ];
 
       bindm = [

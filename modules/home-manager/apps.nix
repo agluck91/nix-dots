@@ -2,11 +2,7 @@
   home.packages = with pkgs; [
     #dev
     postgresql
-    kubernetes-helm
-    kubectl
-    k9s
     lazydocker
-    minikube
     postman
     go
     delve
@@ -25,6 +21,7 @@
     fabric-ai
     cava
     unimatrix
+    opentofu
     asciiquarium-transparent
     pipes
     bat
