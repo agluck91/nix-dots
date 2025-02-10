@@ -9,6 +9,7 @@
     cider-2
     gimp
     google-chrome
+    rustdesk-flutter
     kooha
     x264
     todoist

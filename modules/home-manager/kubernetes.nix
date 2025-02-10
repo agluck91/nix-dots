@@ -1,14 +1,24 @@
-{...}: {
-  programs.helm.enable = true;
-  programs.helm.plugins = ["diff"];
-  programs.krew.enable = true;
-  programs.krew.plugins = [
-    "ctx"
-    "ns"
-    "whoami"
+{
+  config,
+  pkgs,
+  ...
+}: let
+  my-kubernetes-helm = with pkgs;
+    wrapHelm kubernetes-helm {
+      plugins = with pkgs.kubernetes-helmPlugins; [
+        helm-secrets
+        helm-diff
+        helm-s3
+        helm-git
+      ];
+    };
+
+  my-helmfile = pkgs.helmfile-wrapped.override {
+    inherit (my-kubernetes-helm) pluginsDir;
+  };
+in {
+  home.packages = [
+    my-kubernetes-helm
+    my-helmfile
   ];
-  programs.helmfile.enable = true;
-  programs.kubectl.enable = true;
-  programs.k9s.enable = true;
-  programs.minikube.enable = true;
 }

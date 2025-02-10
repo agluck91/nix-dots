@@ -11,7 +11,7 @@ in {
   stylix = {
     enable = true;
     autoEnable = true;
-    image = ../../config/wallpapers/a0ez44uhhx911.jpg;
+    image = ../../config/wallpapers/blue-landscape.png;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     polarity = "dark";
 
