@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   my-kubernetes-helm = with pkgs;
     wrapHelm kubernetes-helm {
       plugins = with pkgs.kubernetes-helmPlugins; [
@@ -20,5 +16,7 @@ in {
   home.packages = [
     my-kubernetes-helm
     my-helmfile
+    pkgs.kubectl
+    pkgs.k9s
   ];
 }

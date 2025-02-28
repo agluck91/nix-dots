@@ -9,6 +9,7 @@
     cider-2
     gimp
     google-chrome
+    lens
     rustdesk-flutter
     kooha
     x264
