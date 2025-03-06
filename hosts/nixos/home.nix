@@ -25,6 +25,7 @@
     packages = [
       (pkgs.helpers.pyScript "start-proxy")
       (pkgs.helpers.pyScript "kill-proxy")
+      (pkgs.helpers.pyScript "setup-ws")
     ];
   };
 

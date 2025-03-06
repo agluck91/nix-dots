@@ -32,6 +32,8 @@
     gnome-control-center
     gnome-weather
     gnome-clocks
+    xdg-desktop-portal
+    xdg-desktop-portal-hyprland
   ];
 
   # Optional, hint Electron apps to use Wayland:

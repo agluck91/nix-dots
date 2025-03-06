@@ -37,7 +37,6 @@
       typescript-language-server
       vscode-langservers-extracted # html, css, json and eslint
       tailwindcss-language-server
-      nodePackages.graphql-language-service-cli
       emmet-language-server
       emmet-ls
       dockerfile-language-server-nodejs

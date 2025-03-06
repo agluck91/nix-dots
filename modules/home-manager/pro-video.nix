@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    cameractrls
     cameractrls-gtk4
   ];
   programs.obs-studio = {
@@ -8,7 +7,6 @@
     plugins = with pkgs.obs-studio-plugins; [
       obs-backgroundremoval
       obs-pipewire-audio-capture
-      droidcam-obs
     ];
   };
 }

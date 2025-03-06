@@ -18,20 +18,28 @@ def move_all_workspaces_to_monitor(target_monitor):
             )
 
 
-INTERNAL_MONITOR = "eDP-1"
-EXTERNAL_MONITOR = "HDMI-A-1"
+def get_monitors():
+    """Returns a list of active monitor names and identifies the internal monitor."""
+    monitors = run_command("hyprctl monitors | awk '{print $2}'").split("\n")
+    internal = next((m for m in monitors if m.startswith("eDP")), None)
+    external = next((m for m in monitors if not m.startswith("eDP")), None)
+    return internal, external, monitors
 
+
+INTERNAL_MONITOR, EXTERNAL_MONITOR, active_monitors = get_monitors()
 num_monitors = int(run_command("hyprctl monitors all | grep -c Monitor"))
-num_monitors_active = int(run_command("hyprctl monitors | grep -c Monitor"))
+num_monitors_active = len(active_monitors)
 
-active_monitors = run_command("hyprctl monitors | cut -d ' ' -f 2").split("\n")
+if not INTERNAL_MONITOR:
+    print("No internal monitor detected!")
+    exit(1)
 
 if num_monitors_active >= 2 and INTERNAL_MONITOR in active_monitors:
     move_all_workspaces_to_monitor(EXTERNAL_MONITOR)
     subprocess.run(f"hyprctl keyword monitor {INTERNAL_MONITOR}, disable", shell=True)
 else:
     if num_monitors > 1:
-        if EXTERNAL_MONITOR in active_monitors:
+        if EXTERNAL_MONITOR and EXTERNAL_MONITOR in active_monitors:
             subprocess.run(
                 f"hyprctl keyword monitor {INTERNAL_MONITOR},preferred,0x0,1",
                 shell=True,
