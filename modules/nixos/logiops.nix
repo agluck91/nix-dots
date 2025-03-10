@@ -1,8 +1,6 @@
 {pkgs, ...}: {
   # Install logiops package
-  home.packages = with pkgs; [
-    logiops
-  ];
+  environment.systemPackages = [pkgs.logiops];
 
   # Create systemd service
   systemd.services.logiops = {
