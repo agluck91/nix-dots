@@ -63,7 +63,6 @@ vim.opt.spell = true
 vim.opt.spelllang = "en_us"
 vim.opt.textwidth = 120
 vim.opt.mouse = "a"
-vim.opt.clipboard = "unnamed"
 vim.opt.scrollbind = false
 vim.opt.wildmenu = true
 

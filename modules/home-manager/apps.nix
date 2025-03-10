@@ -34,6 +34,7 @@
     eza
     tealdeer
     btop
+    glances
     lazygit
     neofetch
     python3

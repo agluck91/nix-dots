@@ -15,6 +15,7 @@
     ../../modules/home-manager/hyprpanel.nix
     ../../modules/home-manager/pro-video.nix
     ../../modules/home-manager/kubernetes.nix
+    ../../modules/home-manager/logiops.nix
   ];
 
   home = {

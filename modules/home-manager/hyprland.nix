@@ -162,6 +162,8 @@
           "SUPER CTRL, Q, exit"
           "SUPER, I, workspace, e+1"
           "SUPER, U, workspace, e-1"
+          "F15, workspace, e+1"
+          "F14, workspace, e-1"
 
           # ", Print, exec, grimblast copy area"
 
