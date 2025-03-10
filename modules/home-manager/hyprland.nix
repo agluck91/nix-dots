@@ -134,8 +134,8 @@
       ];
 
       bindm = [
-        "SHIFT_ALT, mouse:272, movewindow"
-        "SHIFT_ALT, mouse:273, resizewindow"
+        "SHIFT_ALT, mouse:273, movewindow"
+        "SHIFT_ALT, mouse:272, resizewindow"
       ];
 
       bind = let
@@ -162,8 +162,6 @@
           "SUPER CTRL, Q, exit"
           "SUPER, I, workspace, e+1"
           "SUPER, U, workspace, e-1"
-          "F15, workspace, e+1"
-          "F14, workspace, e-1"
 
           # ", Print, exec, grimblast copy area"
 

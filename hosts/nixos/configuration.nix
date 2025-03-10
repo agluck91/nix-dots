@@ -13,7 +13,6 @@
     ../../modules/nixos/stylix.nix
     ../../modules/nixos/gaming.nix
     ../../modules/nixos/hyprland.nix
-    ../../modules/nixos/logiops.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
