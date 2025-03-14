@@ -45,6 +45,5 @@
     }
   ];
 
-  # PipeWire requires this to be false
   services.pulseaudio.enable = false;
 }

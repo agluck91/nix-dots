@@ -16,9 +16,9 @@ in {
     polarity = "dark";
 
     cursor = {
-      package = pkgs.banana-cursor-dreams;
-      size = 64;
-      name = "Banana-Catppuccin-Mocha";
+      name = "capitaine-cursors";
+      package = pkgs.capitaine-cursors;
+      size = 38;
     };
 
     fonts = {

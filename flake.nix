@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/release-24.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/release-24.11";
     hyprpanel = {
       url = "github:agluck91/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,16 +34,7 @@
     nix-darwin,
     hyprpanel,
     ...
-  } @ inputs: let
-    systems = ["x86_64-linux" "aarch64-linux"];
-    forAllSystems = nixpkgs.lib.genAttrs systems;
-  in {
-    packages = forAllSystems (system: {
-      banana-cursor-dreams = import ./pkgs/banana-cursor-dreams/default.nix {
-        pkgs = nixpkgs.legacyPackages.${system};
-      };
-    });
-
+  } @ inputs: {
     darwinConfigurations."mac" = nix-darwin.lib.darwinSystem rec {
       system = "aarch64-darwin";
 

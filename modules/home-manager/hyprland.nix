@@ -34,16 +34,16 @@
       env = [
         "BROWSER,${browser}"
         "XDG_CURRENT_DESKTOP,Hyprland"
-        "HYPRCURSOR_THEME,Banana-Catppuccin-Mocha"
-        "HYPRCURSOR_SIZE,56"
-        "XCURSOR_THEME,Banana-Catppuccin-Mocha"
-        "XCURSOR_SIZE,56"
-        "QT_CURSOR_THEME,Banana-Catppuccin-Mocha"
-        "QT_CURSOR_SIZE,56"
+        "HYPRCURSOR_THEME,capitaine-cursors"
+        "HYPRCURSOR_SIZE,38"
+        "XCURSOR_THEME,capitaine-cursors"
+        "XCURSOR_SIZE,38"
+        "QT_CURSOR_THEME,capitaine-cursors"
+        "QT_CURSOR_SIZE,38"
       ];
 
       cursor = {
-        enable_hyprcursor = false;
+        enable_hyprcursor = true;
       };
 
       misc = {
@@ -58,14 +58,14 @@
       exec-once = [
         "hyprpanel"
         "hyprdim --no-dim-when-only --persist --ignore-leaving-special --dialog-dim"
-        "hyprctl setcursor Banana-Catppuccin-Mocha 56"
+        "hyprctl setcursor capitaine-cursors 38"
         "blueman-tray"
         "switch-display"
       ];
 
       monitor = [
         "HDMI-A-1,preferred,auto,1"
-        "DP-1,highrr,auto,auto"
+        "eDP-1,highrr,auto,auto"
       ];
 
       input.touchpad = {

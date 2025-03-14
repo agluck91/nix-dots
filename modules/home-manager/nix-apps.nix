@@ -3,6 +3,7 @@
     keymapp
     slack
     ghostty
+    ticktick
     barrier
     vesktop
     dbeaver-bin
