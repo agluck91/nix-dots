@@ -1,6 +1,4 @@
 {pkgs, ...}: {
-  # Create systemd service
-  # https://github.com/PixlOne/logiops/blob/5547f52cadd2322261b9fbdf445e954b49dfbe21/src/logid/logid.service.in
   systemd.services.logiops = {
     description = "Logitech Configuration Daemon";
     startLimitIntervalSec = 0;
@@ -8,13 +6,11 @@
     wantedBy = ["graphical.target"];
     serviceConfig = {
       Type = "simple";
-      ExecStart = "${pkgs.logiops_0_2_3}/bin/logid";
+      ExecStart = "${pkgs.logiops}/bin/logid -c /etc/logid.cfg";
       User = "root";
     };
   };
 
-  # Add a `udev` rule to restart `logiops` when the mouse is connected
-  # https://github.com/PixlOne/logiops/issues/239#issuecomment-1044122412
   services.udev.extraRules = ''
     ACTION=="change", SUBSYSTEM=="power_supply", ATTRS{manufacturer}=="Logitech", ATTRS{model_name}=="Wireless Mouse MX Master 3", RUN{program}="${pkgs.systemd}/bin/systemctl --no-block try-restart logiops.service"
   '';
@@ -23,12 +19,14 @@
   environment.etc."logid.cfg".text = ''
     devices: ({
       name: "Wireless Mouse MX Master 3";
+      timeout: 5000;
       smartshift: {
         on: false;
         threshold: 12;
       };
       hiresscroll: {
         hires: true;
+        invert: true;
         target: false;
       };
       buttons: ({

@@ -3,19 +3,18 @@
     keymapp
     slack
     ghostty
+    gnome-themes-extra
+    adwaita-qt
+    adwaita-qt6
+    rpi-imager
     ticktick
-    barrier
     vesktop
     dbeaver-bin
-    cider-2
     gimp
     google-chrome
     lens
-    rustdesk-flutter
     kooha
     x264
-    todoist
-    todoist-electron
     teams-for-linux
     obsidian
     _1password-gui
