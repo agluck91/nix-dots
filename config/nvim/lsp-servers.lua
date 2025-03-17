@@ -27,6 +27,7 @@ local servers = {
 	emmet_ls = {
 		filetypes = {
 			"html",
+			"astro",
 			"typescriptreact",
 			"javascriptreact",
 			"css",
@@ -192,6 +193,7 @@ local servers = {
 			},
 		},
 	},
+	astro = {},
 	gopls = {
 		settings = {
 			gopls = {

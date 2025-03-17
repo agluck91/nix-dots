@@ -39,6 +39,7 @@
       tailwindcss-language-server
       emmet-language-server
       emmet-ls
+      astro-language-server
       dockerfile-language-server-nodejs
       yaml-language-server
       bash-language-server
